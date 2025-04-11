@@ -1,4 +1,7 @@
-﻿using _Core.Scripts.Employees.View;
+﻿using _Core.Scripts.DeckLogic.Deck;
+using _Core.Scripts.DeckLogic.Hand;
+using _Core.Scripts.DeckLogic.Trash;
+using _Core.Scripts.Employees.View;
 using _Core.Scripts.OfficeScripts;
 using _Core.Scripts.OfficeScripts.View;
 using _Core.Scripts.Tasks.View;
@@ -17,6 +20,9 @@ namespace _Core.Scripts.Pipeline
         protected override void Configure(IContainerBuilder builder)
         {
             builder.Register<OfficeTaskController>(Lifetime.Singleton);
+            builder.Register<DeckModel>(Lifetime.Singleton);
+            builder.Register<TrashModel>(Lifetime.Singleton);
+            builder.Register<HandModel>(Lifetime.Singleton);
 
             builder.RegisterComponent(_employeesPanelView);
             builder.RegisterComponent(_taskPopup);

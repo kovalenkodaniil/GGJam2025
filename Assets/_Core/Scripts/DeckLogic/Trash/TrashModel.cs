@@ -5,7 +5,12 @@ namespace _Core.Scripts.DeckLogic.Trash
 {
     public class TrashModel
     {
-        public List<EmployeeData> Employees = new();
+        public List<EmployeeData> Employees;
+
+        public TrashModel()
+        {
+            Employees = new();
+        }
 
         public void AddCard(EmployeeData employee)
         {
@@ -16,9 +21,9 @@ namespace _Core.Scripts.DeckLogic.Trash
         {
             List<EmployeeData> recievedEmployees = new List<EmployeeData>();
             recievedEmployees.AddRange(Employees);
-            
+
             Employees.Clear();
-            
+
             return recievedEmployees;
         }
     }

@@ -7,10 +7,12 @@ namespace _Core.Scripts.Employees
         public EmployeeConfig Config;
         public List<CharacterAttribute> Characteristics;
 
-        public EmployeeData(EmployeeConfig config, List<CharacterAttribute> characterictics)
+        public EmployeeData(EmployeeConfig config)
         {
             this.Config = config;
-            this.Characteristics = characterictics;
+
+            Characteristics = new List<CharacterAttribute>();
+            Characteristics.AddRange(config.characterictics);
         }
     }
 }

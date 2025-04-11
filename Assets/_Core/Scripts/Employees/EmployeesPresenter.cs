@@ -25,12 +25,23 @@ namespace _Core.Scripts.Employees
             m_config = config;
             m_employeesTaskPanel = taskView.EmployeesPanel;
 
+            m_dragParent = taskView.EmployeesPanel.transform;
+            m_defaultParent = m_view.transform.parent;
+
             m_disposable = new CompositeDisposable();
         }
 
         public void Enable()
         {
             UpdateView();
+
+            m_view.OnDragEnded
+                .Subscribe(_ => CheckViewPositionAfterDrag())
+                .AddTo(m_disposable);
+
+            m_view.OnDragHasBegun
+                .Subscribe(_ => SetDragParent())
+                .AddTo(m_disposable);
         }
 
         public void Disable()
@@ -50,7 +61,7 @@ namespace _Core.Scripts.Employees
             if (m_employeesTaskPanel.IsPositionInPanel(dragPosition))
             {
                 m_employeesTaskPanel.AddCharacter(m_config);
-                m_view.transform.SetParent(m_defaultParent);
+                m_view.gameObject.SetActive(false);
             }
             else
             {

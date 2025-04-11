@@ -8,10 +8,9 @@ namespace _Core.Scripts.DeckLogic.Hand
     {
         public List<EmployeeData> Employees;
 
-        public HandModel(List<EmployeeData> employees)
+        public HandModel()
         {
             Employees = new List<EmployeeData>();
-            Employees.AddRange(employees);
         }
 
         public void AddCard(EmployeeData employee)
