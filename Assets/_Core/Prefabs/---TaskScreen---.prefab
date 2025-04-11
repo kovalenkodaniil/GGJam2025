@@ -441,7 +441,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7739135934776458674}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6520835988947546228}
+        m_TargetAssemblyTypeName: _Core.Scripts.Tasks.View.TaskView, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4375513552638708471
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +507,7 @@ MonoBehaviour:
   m_name: {fileID: 2417419245279772405}
   m_description: {fileID: 8368955402167937412}
   m_empoyeesPanel: {fileID: 3325344952880498247}
+  m_completeButton: {fileID: 6152281280776338575}
 --- !u!1 &6248345461991506014
 GameObject:
   m_ObjectHideFlags: 0
