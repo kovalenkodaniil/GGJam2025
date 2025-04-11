@@ -26,6 +26,7 @@ namespace _Core.Scripts.DeckLogic.Hand
             {
                 if (searchableEmployee.Config.id == employee.Config.id)
                 {
+                    Employees.Remove(searchableEmployee);
                     return employee;
                 }
             }
