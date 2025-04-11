@@ -842,6 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_employeerAsset: {fileID: 11400000, guid: 5c54241ae96d49141abbe0077c05d88e, type: 2}
+  m_taskAsset: {fileID: 11400000, guid: f462fc8653822f04ab0b6d39adb9762f, type: 2}
 --- !u!4 &1547257640
 Transform:
   m_ObjectHideFlags: 0

@@ -1,11 +1,15 @@
 ﻿using System.Collections.Generic;
+using _Core.Scripts.Tasks.View;
 using _Core.StaticProvider;
 using UnityEngine;
+using VContainer;
 
 namespace _Core.Scripts.Employees.View
 {
     public class EmployeesPanelView : MonoBehaviour
     {
+        [Inject] private TaskView m_taskView;
+
         [SerializeField] private Transform m_employeesParent;
         [SerializeField] private EmployeesWidget m_employeesViewPrefab;
 
@@ -36,7 +40,7 @@ namespace _Core.Scripts.Employees.View
             {
                 EmployeesWidget view = Instantiate(m_employeesViewPrefab, m_employeesParent);
 
-                m_presenters.Add(new EmployeesPresenter(view, config));
+                m_presenters.Add(new EmployeesPresenter(view, config, m_taskView));
             }
         }
     }
