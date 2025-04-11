@@ -32,10 +32,12 @@ namespace _Core.Scripts.Tasks
             {
                 if (searchableEmployee.Config.id == employee.Config.id)
                 {
+                    Employees.Remove(searchableEmployee);
+                    
                     CalculateCurrentConditions();
                     CheckTaskConditions();
                     
-                    return employee;
+                    return searchableEmployee;
                 }
             }
         
