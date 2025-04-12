@@ -17,8 +17,14 @@ MonoBehaviour:
     turnNumber: 1
     possibleTasks:
     - {fileID: 11400000, guid: bb21a7a03057e584282d6f779bac0c26, type: 2}
-    - {fileID: 11400000, guid: df385631264d8214397ed2943757143f, type: 2}
-    - {fileID: 11400000, guid: 46b4f3c8f72687e429433a76bb1d5c36, type: 2}
+    - {fileID: 11400000, guid: 8fba6ed0a5ea07145b7c2f3890f79244, type: 2}
+    - {fileID: 11400000, guid: d21122b910188644fafbffe984b98eb1, type: 2}
+    - {fileID: 11400000, guid: e97267631073b954a83eda01432f4e1b, type: 2}
+    - {fileID: 11400000, guid: 571391316ecbc0f40852ae986041c952, type: 2}
+    - {fileID: 11400000, guid: 60b9229c51f5f5944820b32018cd9150, type: 2}
+    - {fileID: 11400000, guid: a00f4449478d03240a4bb92ca96e003b, type: 2}
+    - {fileID: 11400000, guid: 414781b5dd2df2b4fb7698b483a102ca, type: 2}
+    - {fileID: 11400000, guid: 8cd8c0a98e2174746a457134bc17859a, type: 2}
     taskDifficulties: 000000000000000000000000
   - id: 1
     turnNumber: 2
