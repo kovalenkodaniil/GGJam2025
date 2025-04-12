@@ -11,8 +11,11 @@ namespace _Core.Scripts.OfficeScripts.View
         [SerializeField] private Button m_taskButton;
         [SerializeField] private Button m_endTurnButton;
         [SerializeField] private List<TaskButton> m_taskButtons;
+        [SerializeField] private List<OfficeCounterView> m_officeCounters;
 
         public List<TaskButton> TaskButtons => m_taskButtons;
+
+        public List<OfficeCounterView> OfficeCounters => m_officeCounters;
 
         public event Action TackClicked;
 

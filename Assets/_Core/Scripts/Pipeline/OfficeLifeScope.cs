@@ -5,6 +5,7 @@ using _Core.Scripts.DeckLogic.Trash;
 using _Core.Scripts.Employees.View;
 using _Core.Scripts.OfficeScripts;
 using _Core.Scripts.OfficeScripts.View;
+using _Core.Scripts.Tasks;
 using _Core.Scripts.Tasks.View;
 using _Core.Scripts.TurnManagerScripts;
 using UnityEngine;
@@ -30,6 +31,8 @@ namespace _Core.Scripts.Pipeline
             builder.Register<DeckController>(Lifetime.Singleton);
             builder.Register<TurnManager>(Lifetime.Singleton);
             builder.Register<OfficeController>(Lifetime.Singleton);
+            builder.Register<OfficeModel>(Lifetime.Singleton);
+            builder.Register<TaskModel>(Lifetime.Singleton);
 
             builder.RegisterComponent(_employeesPanelView);
             builder.RegisterComponent(_taskPopup);

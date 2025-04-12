@@ -15,16 +15,18 @@ namespace _Core.Scripts.Employees
 
         #endregion
 
+        private EmployeeData m_data;
         private CompositeDisposable m_disposable;
         private Transform m_defaultParent;
         private Transform m_dragParent;
 
         public EmployeeConfig Config => m_config;
 
-        public EmployeesPresenter(EmployeesWidget view, EmployeeConfig config, TaskView taskView)
+        public EmployeesPresenter(EmployeesWidget view, EmployeeData data, TaskView taskView)
         {
             m_view = view;
-            m_config = config;
+            m_data = data;
+            m_config = data.Config;
             m_employeesTaskPanel = taskView.EmployeesPanel;
 
             m_dragParent = taskView.EmployeesPanel.transform;
@@ -64,7 +66,7 @@ namespace _Core.Scripts.Employees
 
             if (m_employeesTaskPanel.IsPositionInPanel(dragPosition))
             {
-                m_employeesTaskPanel.AddCharacter(m_config);
+                m_employeesTaskPanel.AddEmployee(m_data);
                 m_view.gameObject.SetActive(false);
             }
             else

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using _Core.Scripts.DeckLogic.Hand;
 using _Core.Scripts.Tasks.View;
-using _Core.StaticProvider;
 using UnityEngine;
 using VContainer;
 
@@ -44,7 +43,7 @@ namespace _Core.Scripts.Employees.View
         {
             EmployeesWidget view = Instantiate(m_employeesViewPrefab, m_employeesParent);
 
-            EmployeesPresenter newPresenter = new EmployeesPresenter(view, employeeData.Config, m_taskView);
+            EmployeesPresenter newPresenter = new EmployeesPresenter(view, employeeData, m_taskView);
 
             newPresenter.Enable();
             m_presenters.Add(newPresenter);

@@ -13,14 +13,14 @@ namespace _Core.Scripts.OfficeScripts
         public ReactiveProperty<RewardAttribute> Quality = new(new RewardAttribute(EnumReward.Quality, 0));
         public ReactiveProperty<RewardAttribute> Gameplay = new(new RewardAttribute(EnumReward.Gameplay, 0));
         public ReactiveProperty<RewardAttribute> Profit = new(new RewardAttribute(EnumReward.Profit, 0));
-        
+
         private List<ReactiveProperty<RewardAttribute>> _rewardAttributes;
 
         public OfficeModel()
         {
             _rewardAttributes = new List<ReactiveProperty<RewardAttribute>> {Graphic, Popularity, Quality, Gameplay, Profit};
         }
-        
+
         public void TakeReward(TaskRewardConfig taskReward)
         {
             foreach (RewardAttribute attribute in taskReward.rewardAttributes)
@@ -32,7 +32,9 @@ namespace _Core.Scripts.OfficeScripts
                     continue;
                 }
 
-                currentAttribute.Value.value += attribute.value;
+                //currentAttribute.Value.value += attribute.value;
+
+                currentAttribute.Value = new RewardAttribute(attribute.type, currentAttribute.Value.value + attribute.value);
             }
         }
     }

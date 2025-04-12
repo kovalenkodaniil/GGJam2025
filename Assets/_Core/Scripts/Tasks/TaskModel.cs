@@ -15,19 +15,19 @@ namespace _Core.Scripts.Tasks
         public List<CharacterAttribute> CurrentConditions = new();
         private TaskRewardConfig _taskReward;
 
-        public void Init(TaskConfig task, TaskRewardConfig taskReward)
+        public void Init(TaskConfig task)
         {
             Task = task;
-            _taskReward = taskReward;
+            _taskReward = task.rewards;
         }
-        
+
         public void AddEmployee(EmployeeData employee)
         {
             Employees.Add(employee);
             CalculateCurrentConditions();
             CheckTaskConditions();
         }
-            
+
         public EmployeeData RemoveEmployee(EmployeeData searchableEmployee)
         {
             foreach (EmployeeData employee in Employees)
@@ -35,17 +35,17 @@ namespace _Core.Scripts.Tasks
                 if (searchableEmployee.Config.id == employee.Config.id)
                 {
                     Employees.Remove(searchableEmployee);
-                    
+
                     CalculateCurrentConditions();
                     CheckTaskConditions();
-                    
+
                     return searchableEmployee;
                 }
             }
-        
+
             return null;
         }
-        
+
         public void CheckTaskConditions()
         {
             foreach (CharacterAttribute attribute in Task.conditions)
@@ -64,20 +64,20 @@ namespace _Core.Scripts.Tasks
         private void CalculateCurrentConditions()
         {
             CurrentConditions.Clear();
-            
+
             foreach (EmployeeData employee in Employees)
             {
                 foreach (CharacterAttribute attribute in employee.Characteristics)
                 {
                     CharacterAttribute currentAttribute = CurrentConditions.FirstOrDefault(a => a.type == attribute.type);
                     int currentValue = currentAttribute?.value ?? -1;
-                    
+
                     if (currentValue == -1)
                     {
                         CharacterAttribute newAttribute = new();
                         newAttribute.type = attribute.type;
                         newAttribute.value = attribute.value;
-                        
+
                         CurrentConditions.Add(newAttribute);
                     }
                     else

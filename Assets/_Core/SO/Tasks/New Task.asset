@@ -21,3 +21,4 @@ MonoBehaviour:
     value: 2
   - type: 1
     value: 1
+  rewards: {fileID: 11400000, guid: 20647bdd9a2f4b641a2b990f625f46f0, type: 2}

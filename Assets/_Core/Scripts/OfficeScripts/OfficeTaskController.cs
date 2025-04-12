@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Core.Scripts.Employees;
 using _Core.Scripts.OfficeScripts.View;
 using _Core.Scripts.Tasks;
 using _Core.Scripts.Tasks.View;
@@ -13,8 +14,10 @@ namespace _Core.Scripts.OfficeScripts
     public class OfficeTaskController
     {
         [Inject] private OfficeView m_officeView;
+        [Inject] private OfficeModel m_officeModel;
         [Inject] private TaskView m_taskView;
         [Inject] private TurnManager m_turnManager;
+        [Inject] private TaskModel m_taskModel;
 
         private List<TaskConfig> m_allTaskConfigs;
         private List<TaskButton> m_taskButtons;
@@ -50,10 +53,23 @@ namespace _Core.Scripts.OfficeScripts
                     ResetTask();
                 })
                 .AddTo(_disposable);
+
+            SubscribeTaskPanel();
+
+            m_taskModel.IsReady
+                .Subscribe(UpdateCompleteButton)
+                .AddTo(_disposable);
+
+            m_taskView.OnComplete += CompleteTask;
         }
 
         public void Disable()
         {
+            m_taskView.EmployeesPanel.EmpoyeesAdded -= OnEmployeeAdded;
+            m_taskView.EmployeesPanel.EmpoyeesRemoved -= OnEmployeeRemoved;
+
+            m_taskView.OnComplete -= CompleteTask;
+
             _disposable?.Dispose();
         }
 
@@ -62,6 +78,37 @@ namespace _Core.Scripts.OfficeScripts
             m_taskView.Open();
             m_taskView.Name = selectedTask.name;
             m_taskView.Description = selectedTask.text;
+            m_taskView.SetConditionCounters(selectedTask.conditions);
+            m_taskView.SetRewardCounters(selectedTask.rewards.rewardAttributes);
+
+            m_taskModel.Init(selectedTask);
+        }
+
+        private void SubscribeTaskPanel()
+        {
+            m_taskView.EmployeesPanel.EmpoyeesAdded += OnEmployeeAdded;
+            m_taskView.EmployeesPanel.EmpoyeesRemoved += OnEmployeeRemoved;
+        }
+
+        private void OnEmployeeAdded(EmployeeData data)
+        {
+            m_taskModel.AddEmployee(data);
+        }
+
+        private void OnEmployeeRemoved(EmployeeData data)
+        {
+            m_taskModel.RemoveEmployee(data);
+        }
+
+        private void UpdateCompleteButton(bool isEnabling)
+        {
+            m_taskView.SetEnablingCompleteButton(isEnabling);
+        }
+
+        private void CompleteTask()
+        {
+            m_taskView.Close();
+            m_officeModel.TakeReward(m_taskModel.GetReward());
         }
 
         private void CreateTasks()

@@ -12,5 +12,7 @@ namespace _Core.Scripts.Tasks
         public string text;
 
         public List<CharacterAttribute> conditions;
+
+        public TaskRewardConfig rewards;
     }
 }

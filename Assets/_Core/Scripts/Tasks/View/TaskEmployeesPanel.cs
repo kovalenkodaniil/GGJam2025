@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using _Core.Scripts.Employees;
 using _Core.Scripts.Employees.View;
 using ObservableCollections;
@@ -15,6 +16,10 @@ namespace _Core.Scripts.Tasks.View
         [SerializeField] private RectTransform m_rect;
         [SerializeField] private List<EmployeesWidget> m_slots;
 
+        public event Action<EmployeeData> EmpoyeesAdded;
+
+        public event Action<EmployeeData> EmpoyeesRemoved;
+
         public void Init()
         {
             Reset();
@@ -27,18 +32,22 @@ namespace _Core.Scripts.Tasks.View
             return m_rect.rect.Contains(localPosition);
         }
 
-        public void AddCharacter(EmployeeConfig data)
+        public void AddEmployee(EmployeeData data)
         {
-            m_employees.Add(data);
+            m_employees.Add(data.Config);
 
-            var characterView = m_slots.Find(sell => sell.IsEmpty);
+            EmployeesWidget characterView = m_slots.Find(sell => sell.IsEmpty);
 
-            UpdateView(characterView, data);
+            UpdateView(characterView, data.Config);
+
+            EmpoyeesAdded?.Invoke(data);
         }
 
-        public List<EmployeeConfig> GetCharacters()
+        public void RemoveEmployee(EmployeeData data)
         {
-            return new List<EmployeeConfig>(m_employees);
+            m_employees.Remove(data.Config);
+
+            EmpoyeesRemoved?.Invoke(data);
         }
 
         public void Reset()
