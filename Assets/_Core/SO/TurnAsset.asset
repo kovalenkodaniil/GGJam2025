@@ -39,11 +39,10 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a81a38c15629f8149b18f0696e77f877, type: 2}
     - {fileID: 11400000, guid: 77e6a93d6d554f14fb40d7cae02f7f0f, type: 2}
     taskDifficulties: 000000000000000001000000
-  - id: 1
+  - id: 3
     turnNumber: 3
     possibleTasks:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 0}
-    taskDifficulties: 000000000000000000000000
+    taskDifficulties: 000000000100000001000000
