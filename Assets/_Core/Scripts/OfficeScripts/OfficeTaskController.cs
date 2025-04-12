@@ -117,7 +117,7 @@ namespace _Core.Scripts.OfficeScripts
                 m_currentButton.Disable();
 
             m_taskView.Close();
-            m_officeModel.TakeReward(m_taskModel.GetReward());
+            m_officeModel.TakeReward(m_taskModel.GetReward(), m_taskModel.Task.difficultyConfig.experience);
         }
 
         private void CreateTasks()
@@ -166,7 +166,7 @@ namespace _Core.Scripts.OfficeScripts
         [CanBeNull]
         private TaskConfig GetRandomTask(TaskDifficulty difficulty, List<TaskConfig> possibleTasks)
         {
-            List<TaskConfig> filteredConfigs = possibleTasks.Where(task => task.difficulty == difficulty).ToList();
+            List<TaskConfig> filteredConfigs = possibleTasks.Where(task => task.difficultyConfig.difficulty == difficulty).ToList();
             if (filteredConfigs.Count == 0)
             {
                 Debug.LogWarning($"No cards with difficulty {difficulty} found!");

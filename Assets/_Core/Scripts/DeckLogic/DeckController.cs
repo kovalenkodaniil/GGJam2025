@@ -58,7 +58,7 @@ namespace _Core.Scripts.DeckLogic
 
         private void DrawNewHand()
         {
-            m_deck.GetCards(3).ForEach(card =>
+            m_deck.GetCards(m_hand.CardsPerTurn).ForEach(card =>
             {
                 m_hand.AddCard(card);
             });
