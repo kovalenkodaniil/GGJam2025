@@ -26,19 +26,24 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 414781b5dd2df2b4fb7698b483a102ca, type: 2}
     - {fileID: 11400000, guid: 8cd8c0a98e2174746a457134bc17859a, type: 2}
     taskDifficulties: 000000000000000000000000
-  - id: 1
+  - id: 2
     turnNumber: 2
     possibleTasks:
-    - {fileID: 11400000, guid: e8132a9ddb34787468df96b5326f4f25, type: 2}
-    - {fileID: 11400000, guid: cce4ccbbc13895f4f9d3b0ea5bbdb21e, type: 2}
-    - {fileID: 11400000, guid: faf9092c27074864f813e2ae976259ba, type: 2}
-    - {fileID: 11400000, guid: faf9092c27074864f813e2ae976259ba, type: 2}
-    taskDifficulties: 000000000000000000000000
+    - {fileID: 11400000, guid: 3ccee5ddbca1f0d4eaad15be086f8266, type: 2}
+    - {fileID: 11400000, guid: d9f30b011cd5f36449f8918be0eda2a3, type: 2}
+    - {fileID: 11400000, guid: 7dffda72cec8d864eb55123f9110e17d, type: 2}
+    - {fileID: 11400000, guid: 1d7aa89ef5e7a764fb07bbd85b4df369, type: 2}
+    - {fileID: 11400000, guid: 0619b74f641436b47ae9d18a58b19b3c, type: 2}
+    - {fileID: 11400000, guid: 88af7c0af10a5074b972c3cb66d120e7, type: 2}
+    - {fileID: 11400000, guid: 5e7d9f9cfc245de46a5e91429559e3c3, type: 2}
+    - {fileID: 11400000, guid: a81a38c15629f8149b18f0696e77f877, type: 2}
+    - {fileID: 11400000, guid: 77e6a93d6d554f14fb40d7cae02f7f0f, type: 2}
+    taskDifficulties: 000000000000000001000000
   - id: 1
     turnNumber: 3
     possibleTasks:
-    - {fileID: 11400000, guid: e8132a9ddb34787468df96b5326f4f25, type: 2}
-    - {fileID: 11400000, guid: cce4ccbbc13895f4f9d3b0ea5bbdb21e, type: 2}
-    - {fileID: 11400000, guid: faf9092c27074864f813e2ae976259ba, type: 2}
-    - {fileID: 11400000, guid: faf9092c27074864f813e2ae976259ba, type: 2}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     taskDifficulties: 000000000000000000000000
