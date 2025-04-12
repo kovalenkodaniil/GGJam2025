@@ -21,7 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dd1d7e3e1a89efc49968d54b3fef2d35, type: 2}
   - {fileID: 11400000, guid: de481efbcfb28a64084d3d1b42654973, type: 2}
   - {fileID: 11400000, guid: 322dcf7cf0e72e34f80813bc66f05ee5, type: 2}
-  - {fileID: 11400000, guid: bf6283b944c9e704082b3d0dcff93bde, type: 2}
+  - {fileID: 11400000, guid: 7d227c61a79ddb540be30bca1a2bc35d, type: 2}
   technologyIcon: {fileID: 0}
   creativityIcon: {fileID: 0}
   softSkillIcon: {fileID: 0}
