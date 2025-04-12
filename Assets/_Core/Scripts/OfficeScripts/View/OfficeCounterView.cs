@@ -2,12 +2,14 @@
 using R3;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Core.Scripts.OfficeScripts.View
 {
     public class OfficeCounterView : MonoBehaviour
     {
         [SerializeField] private TMP_Text m_count;
+        [SerializeField] private Slider m_progressBar;
         [SerializeField] private EnumReward m_type;
 
         private CompositeDisposable m_disposable;
@@ -17,6 +19,8 @@ namespace _Core.Scripts.OfficeScripts.View
         public void Init(OfficeModel officeModel)
         {
             m_disposable = new CompositeDisposable();
+
+            m_progressBar.maxValue = 20;
 
             switch (Type)
             {
@@ -45,6 +49,8 @@ namespace _Core.Scripts.OfficeScripts.View
         private void UpdateCounter(RewardAttribute rewardAttribute)
         {
             m_count.text = $"{rewardAttribute.value}";
+
+            m_progressBar.value = rewardAttribute.value;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Core.Scripts.Employees;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,10 +14,15 @@ namespace _Core.Scripts.Tasks.View
         [SerializeField] private TMP_Text m_name;
         [SerializeField] private TMP_Text m_description;
         [SerializeField] private TMP_Text m_comment;
+        [SerializeField] private CanvasGroup m_canvasGroup;
         [SerializeField] private TaskEmployeesPanel m_empoyeesPanel;
         [SerializeField] private Button m_completeButton;
         [SerializeField] private List<TaskConditionView> m_conditionView;
+        [SerializeField] private List<TaskConditionView> m_currentSkillView;
         [SerializeField] private List<TaskRewardView> m_rewardView;
+
+        private Tween _tween;
+        private Sequence _tweenSequence;
 
         public event Action OnComplete;
 
@@ -43,15 +49,17 @@ namespace _Core.Scripts.Tasks.View
             m_empoyeesPanel.Init();
 
             m_completeButton.onClick.AddListener(CompleteTask);
+
+            PlayOpenAnim();
         }
 
         public void Close()
         {
-            m_conatainer.SetActive(false);
-
             m_completeButton.onClick.RemoveListener(CompleteTask);
 
             m_empoyeesPanel.ReturnEmployees();
+
+            PlayCloseAnim();
         }
 
         public void SetEnablingCompleteButton(bool isEnabling)
@@ -66,6 +74,18 @@ namespace _Core.Scripts.Tasks.View
             attributes.ForEach(attribute =>
             {
                 TaskConditionView view = m_conditionView.Find(view => view.Type == attribute.type);
+
+                view.SetCount(attribute.value);
+            });
+        }
+
+        public void SetCurrentCounters(List<CharacterAttribute> attributes)
+        {
+            m_currentSkillView.ForEach(view => view.Disable());
+
+            attributes.ForEach(attribute =>
+            {
+                TaskConditionView view = m_currentSkillView.Find(view => view.Type == attribute.type);
 
                 view.SetCount(attribute.value);
             });
@@ -86,6 +106,30 @@ namespace _Core.Scripts.Tasks.View
             m_empoyeesPanel.TrashEmployee();
 
             OnComplete?.Invoke();
+        }
+
+        private void PlayOpenAnim()
+        {
+            _tweenSequence = DOTween.Sequence();
+
+            transform.localScale = new Vector3(0.2f,0.2f,0.2f);
+            m_canvasGroup.alpha = 0;
+
+            _tweenSequence.Append(transform.DOScale(1f, 0.2f));
+            _tweenSequence.Join(m_canvasGroup.DOFade(1f, 0.2f));
+        }
+
+        private void PlayCloseAnim()
+        {
+            _tweenSequence = DOTween.Sequence();
+
+            //transform.localScale = new Vector3(0.2f,0.2f,0.2f);
+            //m_canvasGroup.alpha = 0;
+
+            _tweenSequence.Append(transform.DOScale(0.2f, 0.2f));
+            _tweenSequence.Join(m_canvasGroup.DOFade(0f, 0.2f));
+
+            _tweenSequence.OnComplete(() => { m_conatainer.SetActive(false); });
         }
     }
 }
