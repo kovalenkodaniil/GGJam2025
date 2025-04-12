@@ -34,4 +34,4 @@ MonoBehaviour:
     value: 1
   rewards:
   - type: 2
-    value: 1
+    value: 10

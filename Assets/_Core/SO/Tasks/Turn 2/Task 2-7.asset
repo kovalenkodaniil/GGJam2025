@@ -32,4 +32,4 @@ MonoBehaviour:
     value: 2
   rewards:
   - type: 3
-    value: 2
+    value: 20

@@ -46,3 +46,10 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     taskDifficulties: 000000000100000001000000
+  - id: 4
+    turnNumber: 4
+    possibleTasks:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    taskDifficulties: 010000000100000001000000
