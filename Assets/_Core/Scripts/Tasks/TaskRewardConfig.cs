@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace _Core.Scripts.Tasks
 {
-    [CreateAssetMenu(fileName = "New Reward", menuName = "Create new Reward")]
-    public class TaskRewardConfig : ScriptableObject
-    {
-        //TODO: убрать и напрямую передавать List<RewardAttribute> в конфиг
-        public string id;
-        public List<RewardAttribute> rewardAttributes;
-    }
+    // [CreateAssetMenu(fileName = "New Reward", menuName = "Create new Reward")]
+    // public class TaskRewardConfig : ScriptableObject
+    // {
+    //     //TODO: убрать и напрямую передавать List<RewardAttribute> в конфиг
+    //     public string id;
+    //     public List<RewardAttribute> rewardAttributes;
+    // }
     
     public enum EnumReward
     {

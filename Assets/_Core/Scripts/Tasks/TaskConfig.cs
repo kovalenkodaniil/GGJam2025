@@ -15,7 +15,8 @@ namespace _Core.Scripts.Tasks
         public int turnNumber;
 
         public List<CharacterAttribute> conditions;
-
-        public TaskRewardConfig rewards;
+        public List<RewardAttribute> rewards;
+        
+        // public TaskRewardConfig rewards;
     }
 }

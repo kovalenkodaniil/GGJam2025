@@ -35,9 +35,9 @@ namespace _Core.Scripts.OfficeScripts
             _officeConfigs.AddRange(StaticDataProvider.Get<OfficeDataProvider>().asset.configs);
         }
 
-        public void TakeReward(TaskRewardConfig taskReward, int experience)
+        public void TakeReward(List<RewardAttribute> taskReward, int experience)
         {
-            foreach (RewardAttribute attribute in taskReward.rewardAttributes)
+            foreach (RewardAttribute attribute in taskReward)
             {
                 ReactiveProperty<RewardAttribute> currentAttribute =
                     _rewardAttributes.FirstOrDefault(a => a.Value.type == attribute.type);

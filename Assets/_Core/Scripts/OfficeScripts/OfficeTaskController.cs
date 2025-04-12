@@ -86,7 +86,7 @@ namespace _Core.Scripts.OfficeScripts
             m_taskView.Description = selectedTask.Config.text;
             m_taskView.Comment = selectedTask.Config.text;
             m_taskView.SetConditionCounters(selectedTask.Config.conditions);
-            m_taskView.SetRewardCounters(selectedTask.Config.rewards.rewardAttributes);
+            m_taskView.SetRewardCounters(selectedTask.Config.rewards);
 
             m_taskModel.Init(selectedTask);
         }
