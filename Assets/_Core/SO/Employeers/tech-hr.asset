@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 29
   name: HR
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 87fa37310e4aa0647b587c0a41319c66, type: 3}
   characterictics:
   - type: 2
     value: 2

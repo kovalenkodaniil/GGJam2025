@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 25
   name: Community
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: fc116a92047845a4f91babfb633393de, type: 3}
   characterictics:
   - type: 1
     value: 1
