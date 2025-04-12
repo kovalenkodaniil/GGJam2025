@@ -13,10 +13,12 @@ namespace _Core.Scripts.Tasks
         public List<EmployeeData> Employees = new();
         public ReactiveProperty<bool> IsReady = new(false);
         public List<CharacterAttribute> CurrentConditions = new();
+        private TaskRewardConfig _taskReward;
 
-        public void Init(TaskConfig task)
+        public void Init(TaskConfig task, TaskRewardConfig taskReward)
         {
             Task = task;
+            _taskReward = taskReward;
         }
         
         public void AddEmployee(EmployeeData employee)
@@ -86,7 +88,10 @@ namespace _Core.Scripts.Tasks
             }
 
         }
-    
-        //public GetReward() {}
+
+        public TaskRewardConfig GetReward()
+        {
+            return _taskReward;
+        }
     }
 }
