@@ -14,6 +14,13 @@ namespace _Core.Scripts.Tasks.View
         public void SetCount(int count)
         {
             m_count.text = $"{count}";
+
+            gameObject.SetActive(true);
+        }
+
+        public void Disable()
+        {
+            gameObject.SetActive(false);
         }
     }
 }

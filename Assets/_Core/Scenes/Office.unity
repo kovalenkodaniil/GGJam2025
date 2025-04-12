@@ -764,22 +764,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ---EmployeerPanel---
       objectReference: {fileID: 0}
-    - target: {fileID: 4685067064034547285, guid: 28e2710298dcb8a469ce374ebb6be131, type: 3}
-      propertyPath: m_Color.a
-      value: 0.27450982
-      objectReference: {fileID: 0}
-    - target: {fileID: 4685067064034547285, guid: 28e2710298dcb8a469ce374ebb6be131, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4685067064034547285, guid: 28e2710298dcb8a469ce374ebb6be131, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4685067064034547285, guid: 28e2710298dcb8a469ce374ebb6be131, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8089686767797765617, guid: 28e2710298dcb8a469ce374ebb6be131, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1026,11 +1010,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1493633496}
-  - {fileID: 955253298}
-  - {fileID: 1096637481}
   - {fileID: 555665850}
   - {fileID: 1441619842}
   - {fileID: 694099995}
+  - {fileID: 955253298}
+  - {fileID: 1096637481}
   - {fileID: 1753493760}
   - {fileID: 1307263936}
   m_Father: {fileID: 815013490}

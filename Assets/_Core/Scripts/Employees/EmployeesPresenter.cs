@@ -106,10 +106,7 @@ namespace _Core.Scripts.Employees
             m_view.Portrait = m_config.icon;
             m_view.Name = m_config.name;
 
-            for (int i = 0; i < m_config.characterictics.Count; i++)
-            {
-                m_view.Counters[i].text = m_config.characterictics[i].value.ToString();
-            }
+            m_view.SetConditionCounters(m_config.characterictics);
         }
     }
 }

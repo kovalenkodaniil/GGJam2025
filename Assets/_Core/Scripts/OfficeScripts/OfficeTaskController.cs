@@ -84,6 +84,7 @@ namespace _Core.Scripts.OfficeScripts
             m_taskView.Open();
             m_taskView.Name = selectedTask.name;
             m_taskView.Description = selectedTask.text;
+            m_taskView.Description = selectedTask.comment;
             m_taskView.SetConditionCounters(selectedTask.conditions);
             m_taskView.SetRewardCounters(selectedTask.rewards.rewardAttributes);
 

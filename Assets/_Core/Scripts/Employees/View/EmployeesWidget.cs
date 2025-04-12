@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Core.Scripts.Tasks.View;
 using R3;
 using TMPro;
 using UnityEngine;
@@ -16,13 +17,13 @@ namespace _Core.Scripts.Employees.View
         [SerializeField] private TMP_Text m_name;
         [SerializeField] private GameObject _emptyState;
         [SerializeField] private GameObject _employeesState;
-        [SerializeField] private List<TMP_Text> m_characteristicCounters;
+        [SerializeField] private List<TaskConditionView> m_conditionView;
 
         public Sprite Portrait { set => _portrait.sprite = value; }
 
         public string Name { set => m_name.text = value; }
 
-        public List<TMP_Text> Counters => m_characteristicCounters;
+        public List<TaskConditionView> Counters => m_conditionView;
 
         public bool IsEmpty { get; private set; }
 
@@ -32,6 +33,18 @@ namespace _Core.Scripts.Employees.View
 
             _employeesState.SetActive(false);
             _emptyState.SetActive(true);
+        }
+
+        public void SetConditionCounters(List<CharacterAttribute> attributes)
+        {
+            m_conditionView.ForEach(view => view.Disable());
+
+            attributes.ForEach(attribute =>
+            {
+                TaskConditionView view = m_conditionView.Find(view => view.Type == attribute.type);
+
+                view.SetCount(attribute.value);
+            });
         }
 
         public void SetCharacterState()

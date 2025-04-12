@@ -10,9 +10,10 @@ namespace _Core.Scripts.Tasks
         public string id;
         public string name;
         public string text;
+        public string comment;
         public TaskDifficulty difficulty;
         public int turnNumber;
-        
+
         public List<CharacterAttribute> conditions;
 
         public TaskRewardConfig rewards;
