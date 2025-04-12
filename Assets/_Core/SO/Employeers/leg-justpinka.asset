@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
-  m_Name: Yakob
+  m_Name: leg-justpinka
   m_EditorClassIdentifier: 
-  id: 8
-  name: "\u042F\u043A\u043E\u0432"
-  icon: {fileID: 21300000, guid: 3d6c608603276bc4e87ad26a7d722f0d, type: 3}
+  id: 4
+  name: "\u041A\u043E\u043F\u0438\u0442 \u043D\u0430 \u043B\u0430\u043C\u0431\u0443"
+  icon: {fileID: 21300000, guid: ba741f66b3ad171449616a549597d7e2, type: 3}
   characterictics:
-  - type: 0
-    value: 2
   - type: 1
-    value: 1
+    value: 2
+  - type: 2
+    value: 3

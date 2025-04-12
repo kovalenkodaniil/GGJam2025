@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
-  m_Name: Boris
+  m_Name: gd-ld
   m_EditorClassIdentifier: 
-  id: 2
-  name: "\u0411\u043E\u0440\u0438\u0441"
-  icon: {fileID: 21300000, guid: e84b54d08f6d8b546acdf47c7484b21c, type: 3}
+  id: 12
+  name: Level-designer
+  icon: {fileID: 21300000, guid: 3d6c608603276bc4e87ad26a7d722f0d, type: 3}
   characterictics:
+  - type: 1
+    value: 2
   - type: 2
-    value: 3
+    value: 1

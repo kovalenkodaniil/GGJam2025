@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
-  m_Name: Vladimir
+  m_Name: leg-ilja
   m_EditorClassIdentifier: 
-  id: 7
-  name: "\u0412\u043B\u0430\u0434\u0438\u043C\u0438\u0440"
-  icon: {fileID: 21300000, guid: 3d6c608603276bc4e87ad26a7d722f0d, type: 3}
+  id: 5
+  name: "\u0423\u0441\u0442\u0430\u0432\u0448\u0438\u0439 \u0441\u0430\u043F\u043F\u043E\u0440\u0442"
+  icon: {fileID: 21300000, guid: 04e7eb5427596b94cbe2ed09e4d94180, type: 3}
   characterictics:
   - type: 0
     value: 2
   - type: 2
-    value: 2
+    value: 3

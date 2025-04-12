@@ -26,4 +26,13 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e8132a9ddb34787468df96b5326f4f25, type: 2}
     - {fileID: 11400000, guid: cce4ccbbc13895f4f9d3b0ea5bbdb21e, type: 2}
     - {fileID: 11400000, guid: faf9092c27074864f813e2ae976259ba, type: 2}
+    - {fileID: 11400000, guid: faf9092c27074864f813e2ae976259ba, type: 2}
+    taskDifficulties: 000000000000000000000000
+  - id: 1
+    turnNumber: 3
+    possibleTasks:
+    - {fileID: 11400000, guid: e8132a9ddb34787468df96b5326f4f25, type: 2}
+    - {fileID: 11400000, guid: cce4ccbbc13895f4f9d3b0ea5bbdb21e, type: 2}
+    - {fileID: 11400000, guid: faf9092c27074864f813e2ae976259ba, type: 2}
+    - {fileID: 11400000, guid: faf9092c27074864f813e2ae976259ba, type: 2}
     taskDifficulties: 000000000000000000000000
