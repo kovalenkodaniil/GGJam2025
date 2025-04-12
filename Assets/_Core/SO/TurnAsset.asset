@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TurnAsset
   m_EditorClassIdentifier: 
   turns:
-  - id: 1
+  - id: turn_1
     turnNumber: 1
     possibleTasks:
     - {fileID: 11400000, guid: bb21a7a03057e584282d6f779bac0c26, type: 2}
@@ -26,7 +26,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 414781b5dd2df2b4fb7698b483a102ca, type: 2}
     - {fileID: 11400000, guid: 8cd8c0a98e2174746a457134bc17859a, type: 2}
     taskDifficulties: 000000000000000000000000
-  - id: 2
+  - id: turn_2
     turnNumber: 2
     possibleTasks:
     - {fileID: 11400000, guid: 3ccee5ddbca1f0d4eaad15be086f8266, type: 2}
@@ -39,14 +39,32 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a81a38c15629f8149b18f0696e77f877, type: 2}
     - {fileID: 11400000, guid: 77e6a93d6d554f14fb40d7cae02f7f0f, type: 2}
     taskDifficulties: 000000000000000001000000
-  - id: 1
+  - id: turn_3
     turnNumber: 3
     possibleTasks:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    taskDifficulties: 000000000000000000000000
+    - {fileID: 11400000, guid: d79cde235ce193e4dbb5e1891db1f70f, type: 2}
+    - {fileID: 11400000, guid: 6f2079c8b4a1e5644b03915344841544, type: 2}
+    - {fileID: 11400000, guid: 88522ac1058925f49a61053c60854c9f, type: 2}
+    - {fileID: 11400000, guid: 861eb355cd2735242858dc695018f1d3, type: 2}
+    - {fileID: 11400000, guid: 8368f6f99fbfb7b45b74208da9148264, type: 2}
+    - {fileID: 11400000, guid: 2a8af222a2c59c743a5e289d3a537446, type: 2}
+    - {fileID: 11400000, guid: 4257c934ed3389d4b80bd5e768a682ab, type: 2}
+    - {fileID: 11400000, guid: 390f0d739163a994c9d2b02dc9753f76, type: 2}
+    - {fileID: 11400000, guid: b1670d34edba6e24d9e460485a6a3a73, type: 2}
+    taskDifficulties: 000000000100000001000000
+  - id: turn_4
+    turnNumber: 4
+    possibleTasks:
+    - {fileID: 11400000, guid: ac73c65908fcce64f88a47f4fa16e47e, type: 2}
+    - {fileID: 11400000, guid: ff51ff00b8bca2f43892f7b1cd4400f8, type: 2}
+    - {fileID: 11400000, guid: ce7f376c50c18a84ab53224b63356701, type: 2}
+    - {fileID: 11400000, guid: d6ef71fc675ffdd47bfce109f3fd65f6, type: 2}
+    - {fileID: 11400000, guid: fb772a1697c2f914ebd3002638085f47, type: 2}
+    - {fileID: 11400000, guid: 8d993acd8ac9d124591fd1b1f2426420, type: 2}
+    - {fileID: 11400000, guid: 0b844f16b8888484cb4f52309dee3917, type: 2}
+    - {fileID: 11400000, guid: 6717a6fb59fc15849bf66f0ec167ab24, type: 2}
+    - {fileID: 11400000, guid: d2baec449359c564b857d0f1360ec6ac, type: 2}
+    taskDifficulties: 010000000100000001000000
   - id: turn_5
     turnNumber: 5
     possibleTasks:
