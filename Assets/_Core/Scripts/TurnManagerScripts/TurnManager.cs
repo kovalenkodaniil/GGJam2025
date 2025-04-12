@@ -60,12 +60,13 @@ namespace _Core.Scripts.TurnManagerScripts
             switch (state)
             {
                 case EnumTurnState.StartTurn:
+
                     if (TryChangeTurn() == false)
                     {
-                        IsGameOver = new ReactiveProperty<bool>(true);
+                        IsGameOver.Value = true;
                         return;
                     }
-                    
+
                     OnTurnStarted.OnNext(Unit.Default);
                     break;
 

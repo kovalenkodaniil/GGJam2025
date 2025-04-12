@@ -140,6 +140,9 @@ namespace _Core.Scripts.OfficeScripts
         private void CreateTasks()
         {
             m_taskButtons.AddRange(m_officeView.TaskButtons);
+            List<TaskButton> tempButtons = new List<TaskButton>();
+            tempButtons.AddRange(m_officeView.TaskButtons);
+
             m_taskData.Clear();
 
             TurnConfig currentTurn = m_turnManager.CurrentTurn;
@@ -149,8 +152,8 @@ namespace _Core.Scripts.OfficeScripts
 
             foreach (TaskDifficulty difficulty in currentTurn.taskDifficulties)
             {
-                TaskButton taskButton = m_taskButtons[Random.Range(0, m_taskButtons.Count)];
-                m_taskButtons.Remove(taskButton);
+                TaskButton taskButton = tempButtons[Random.Range(0, tempButtons.Count)];
+                tempButtons.Remove(taskButton);
 
                 TaskData task = GetRandomTask(difficulty, currentPossibleTasks);
 
@@ -168,6 +171,8 @@ namespace _Core.Scripts.OfficeScripts
 
                 button.TaskSelected -= OpenTask;
             });
+
+            m_taskButtons.Clear();
         }
 
         [CanBeNull]
