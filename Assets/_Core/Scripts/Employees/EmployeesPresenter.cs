@@ -1,7 +1,9 @@
-﻿using _Core.Scripts.Employees.View;
+﻿using System;
+using _Core.Scripts.Employees.View;
 using _Core.Scripts.Tasks.View;
 using R3;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace _Core.Scripts.Employees
 {
@@ -22,17 +24,19 @@ namespace _Core.Scripts.Employees
 
         private bool isInTask;
 
+        public event Action<EmployeesPresenter> OnDiscarded;
+
         public EmployeeConfig Config => m_config;
 
-        public EmployeesPresenter(EmployeesWidget view, EmployeeData data, TaskView taskView)
+        public EmployeesPresenter(EmployeesWidget view, EmployeeData data, TaskView taskView, Transform defaultParent)
         {
             m_view = view;
             m_data = data;
             m_config = data.Config;
             m_employeesTaskPanel = taskView.EmployeesPanel;
 
-            m_dragParent = taskView.EmployeesPanel.transform;
-            m_defaultParent = m_view.transform.parent;
+            m_dragParent = defaultParent.parent;
+            m_defaultParent = defaultParent;
 
             m_disposable = new CompositeDisposable();
 
@@ -58,8 +62,26 @@ namespace _Core.Scripts.Employees
                 return;
 
             m_disposable.Dispose();
+            m_view.OnDiscarded -= TryDiscarded;
 
             Object.Destroy(m_view.gameObject);
+        }
+
+        public void PlayDiscardAnimation(Vector3 discardPosition)
+        {
+            if (m_view == null)
+            {
+                OnDiscarded?.Invoke(this);
+                return;
+            }
+
+            m_view.OnDiscarded += TryDiscarded;
+            m_view.PlayDiscardAnimation(discardPosition);
+        }
+
+        private void TryDiscarded()
+        {
+            OnDiscarded?.Invoke(this);
         }
 
         private void SetDragParent()
@@ -95,6 +117,7 @@ namespace _Core.Scripts.Employees
             isInTask = false;
             m_employeesTaskPanel.RemoveEmployee(m_data);
             m_view.transform.SetParent(m_defaultParent);
+            m_view.transform.localPosition = Vector3.zero;
 
             m_employeesTaskPanel.EmpoyeesReturn -= ReturnOnPanel;
             m_employeesTaskPanel.EmpoyeesTrashed -= Disable;

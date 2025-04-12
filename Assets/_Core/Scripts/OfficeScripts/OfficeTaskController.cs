@@ -84,11 +84,12 @@ namespace _Core.Scripts.OfficeScripts
             m_taskView.Open();
             m_taskView.Name = selectedTask.Config.name;
             m_taskView.Description = selectedTask.Config.text;
-            m_taskView.Comment = selectedTask.Config.text;
+            m_taskView.Comment = selectedTask.Config.comment;
             m_taskView.SetConditionCounters(selectedTask.Config.conditions);
             m_taskView.SetRewardCounters(selectedTask.Config.rewards);
 
             m_taskModel.Init(selectedTask);
+            m_taskView.SetCurrentCounters(m_taskModel.CurrentConditions);
         }
 
         private void SubscribeTaskPanel()
@@ -100,11 +101,15 @@ namespace _Core.Scripts.OfficeScripts
         private void OnEmployeeAdded(EmployeeData data)
         {
             m_taskModel.AddEmployee(data);
+
+            m_taskView.SetCurrentCounters(m_taskModel.CurrentConditions);
         }
 
         private void OnEmployeeRemoved(EmployeeData data)
         {
             m_taskModel.RemoveEmployee(data);
+
+            m_taskView.SetCurrentCounters(m_taskModel.CurrentConditions);
         }
 
         private void UpdateCompleteButton(bool isEnabling)
