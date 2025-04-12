@@ -10,7 +10,7 @@ namespace _Core.Scripts.TurnManagerScripts
         public string id;
         public int turnNumber;
 
-        public List<TaskConfig> possibleTasks;
+        public List<TaskData> possibleTasks;
         public List<TaskDifficulty> taskDifficulties;
     }
 }
