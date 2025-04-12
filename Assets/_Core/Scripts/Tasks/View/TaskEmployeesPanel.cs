@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using _Core.Scripts.Employees;
 using _Core.Scripts.Employees.View;
-using ObservableCollections;
 using UnityEngine;
 
 namespace _Core.Scripts.Tasks.View
 {
     public class TaskEmployeesPanel : MonoBehaviour
     {
-        private readonly ObservableList<EmployeeConfig> m_employees = new ();
-
-        public IObservableCollection<EmployeeConfig> Employees => m_employees;
-
         [SerializeField] private RectTransform m_rect;
-        [SerializeField] private List<EmployeesWidget> m_slots;
+        [SerializeField] private List<SlotView> m_slots;
 
         public event Action<EmployeeData> EmpoyeesAdded;
 
         public event Action<EmployeeData> EmpoyeesRemoved;
+
+        public event Action EmpoyeesTrashed;
+
+        public event Action EmpoyeesReturn;
 
         public void Init()
         {
@@ -32,40 +31,44 @@ namespace _Core.Scripts.Tasks.View
             return m_rect.rect.Contains(localPosition);
         }
 
-        public void AddEmployee(EmployeeData data)
+        public void AddEmployee(EmployeeData data, EmployeesWidget widget)
         {
-            m_employees.Add(data.Config);
-
-            EmployeesWidget characterView = m_slots.Find(sell => sell.IsEmpty);
-
-            UpdateView(characterView, data.Config);
+            SlotView slot = m_slots.Find(sell => sell.IsEmpty);
+            slot.SetWidget(widget, data);
 
             EmpoyeesAdded?.Invoke(data);
         }
 
         public void RemoveEmployee(EmployeeData data)
         {
-            m_employees.Remove(data.Config);
+            foreach (SlotView slot in m_slots)
+            {
+                if (slot.IsEmpty)
+                    continue;
+
+                if (slot.Data.Config.id == data.Config.id)
+                {
+                    slot.Reset();
+                    break;
+                }
+            }
 
             EmpoyeesRemoved?.Invoke(data);
         }
 
         public void Reset()
         {
-            m_slots.ForEach(sell => sell.SetEmptyState());
-            m_employees.Clear();
+            m_slots.ForEach(sell => sell.Reset());
         }
 
-        private void UpdateView(EmployeesWidget view, EmployeeConfig data)
+        public void TrashEmployee()
         {
-            view.SetCharacterState();
-            view.Portrait = data.icon;
-            view.Name = data.name;
+            EmpoyeesTrashed?.Invoke();
+        }
 
-            for (int i = 0; i < data.characterictics.Count; i++)
-            {
-                view.Counters[i].text = data.characterictics[i].value.ToString();
-            }
+        public void ReturnEmployees()
+        {
+            EmpoyeesReturn?.Invoke();
         }
     }
 }

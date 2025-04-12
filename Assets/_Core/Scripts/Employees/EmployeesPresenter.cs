@@ -20,6 +20,8 @@ namespace _Core.Scripts.Employees
         private Transform m_defaultParent;
         private Transform m_dragParent;
 
+        private bool isInTask;
+
         public EmployeeConfig Config => m_config;
 
         public EmployeesPresenter(EmployeesWidget view, EmployeeData data, TaskView taskView)
@@ -33,6 +35,8 @@ namespace _Core.Scripts.Employees
             m_defaultParent = m_view.transform.parent;
 
             m_disposable = new CompositeDisposable();
+
+            isInTask = false;
         }
 
         public void Enable()
@@ -50,6 +54,9 @@ namespace _Core.Scripts.Employees
 
         public void Disable()
         {
+            if (m_view == null)
+                return;
+
             m_disposable.Dispose();
 
             Object.Destroy(m_view.gameObject);
@@ -66,13 +73,31 @@ namespace _Core.Scripts.Employees
 
             if (m_employeesTaskPanel.IsPositionInPanel(dragPosition))
             {
-                m_employeesTaskPanel.AddEmployee(m_data);
-                m_view.gameObject.SetActive(false);
+                AddOnTaskPanel();
             }
             else
             {
-                m_view.transform.SetParent(m_defaultParent);
+                ReturnOnPanel();
             }
+        }
+
+        private void AddOnTaskPanel()
+        {
+            m_employeesTaskPanel.AddEmployee(m_data, m_view);
+            isInTask = true;
+
+            m_employeesTaskPanel.EmpoyeesTrashed += Disable;
+            m_employeesTaskPanel.EmpoyeesReturn += ReturnOnPanel;
+        }
+
+        private void ReturnOnPanel()
+        {
+            isInTask = false;
+            m_employeesTaskPanel.RemoveEmployee(m_data);
+            m_view.transform.SetParent(m_defaultParent);
+
+            m_employeesTaskPanel.EmpoyeesReturn -= ReturnOnPanel;
+            m_employeesTaskPanel.EmpoyeesTrashed -= Disable;
         }
 
         private void UpdateView()

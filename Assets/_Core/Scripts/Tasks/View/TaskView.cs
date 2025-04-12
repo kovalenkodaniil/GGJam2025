@@ -44,6 +44,8 @@ namespace _Core.Scripts.Tasks.View
             m_conatainer.SetActive(false);
 
             m_completeButton.onClick.RemoveListener(CompleteTask);
+
+            m_empoyeesPanel.ReturnEmployees();
         }
 
         public void SetEnablingCompleteButton(bool isEnabling)
@@ -74,6 +76,8 @@ namespace _Core.Scripts.Tasks.View
         private void CompleteTask()
         {
             OnComplete?.Invoke();
+
+            m_empoyeesPanel.TrashEmployee();
         }
     }
 }

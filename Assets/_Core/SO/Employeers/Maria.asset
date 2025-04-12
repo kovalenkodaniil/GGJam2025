@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
   m_Name: Maria
   m_EditorClassIdentifier: 
-  id: 2
+  id: 5
   name: "\u041C\u0430\u0440\u0438\u044F"
   icon: {fileID: 21300000, guid: 04e7eb5427596b94cbe2ed09e4d94180, type: 3}
   characterictics:

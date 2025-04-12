@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
   m_Name: Inga
   m_EditorClassIdentifier: 
-  id: 2
+  id: 4
   name: "\u0418\u043D\u0433\u0430"
   icon: {fileID: 21300000, guid: ba741f66b3ad171449616a549597d7e2, type: 3}
   characterictics:

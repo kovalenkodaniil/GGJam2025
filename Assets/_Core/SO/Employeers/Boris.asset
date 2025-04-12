@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
   m_Name: Boris
   m_EditorClassIdentifier: 
-  id: 1
+  id: 2
   name: "\u0411\u043E\u0440\u0438\u0441"
   icon: {fileID: 21300000, guid: e84b54d08f6d8b546acdf47c7484b21c, type: 3}
   characterictics:
