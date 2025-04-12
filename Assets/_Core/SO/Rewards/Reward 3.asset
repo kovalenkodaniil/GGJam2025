@@ -16,5 +16,3 @@ MonoBehaviour:
   rewardAttributes:
   - type: 4
     value: 2
-  - type: 2
-    value: 1
