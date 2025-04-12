@@ -13,16 +13,21 @@ MonoBehaviour:
   m_Name: Task 2-6
   m_EditorClassIdentifier: 
   id: 45
-  name: 
-  text: 
+  name: "\u0422\u0443\u0440\u043D\u0438\u0440!"
+  text: "\u0423\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u0442\u0443\u0440\u043D\u0438\u0440
+    \u0432\u043D\u0443\u0442\u0440\u0438 \u043A\u043E\u043C\u0430\u043D\u0434\u044B. "
   difficultyConfig: {fileID: 11400000, guid: 09696e6a496ccee48aa858f47d786bf4, type: 2}
-  comment: 
+  comment: "\u0414\u043B\u044F \u0441\u043F\u043B\u043E\u0447\u0435\u043D\u0438\u044F
+    \u043A\u043E\u043B\u043B\u0435\u043A\u0442\u0438\u0432\u0430 \u0443\u0441\u0442\u0440\u043E\u0438\u043C
+    \u0442\u0443\u0440\u043D\u0438\u0440. \u0412\u043E \u0447\u0442\u043E \u0431\u0443\u0434\u0435\u043C
+    \u0438\u0433\u0440\u0430\u0442\u044C? \u0412 \u043D\u0430\u0448\u0443 \u0438\u0433\u0440\u0443,
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E \u0436\u0435!"
   turnNumber: 2
   conditions:
-  - type: 0
-    value: 0
-  - type: 0
-    value: 0
+  - type: 1
+    value: 1
+  - type: 2
+    value: 1
   rewards:
-  - type: 0
-    value: 0
+  - type: 2
+    value: 1

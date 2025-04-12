@@ -13,6 +13,21 @@ MonoBehaviour:
   m_Name: TaskAsset
   m_EditorClassIdentifier: 
   tasks:
+  - {fileID: 11400000, guid: 3ccee5ddbca1f0d4eaad15be086f8266, type: 2}
+  - {fileID: 11400000, guid: d9f30b011cd5f36449f8918be0eda2a3, type: 2}
+  - {fileID: 11400000, guid: 7dffda72cec8d864eb55123f9110e17d, type: 2}
+  - {fileID: 11400000, guid: 1d7aa89ef5e7a764fb07bbd85b4df369, type: 2}
+  - {fileID: 11400000, guid: 0619b74f641436b47ae9d18a58b19b3c, type: 2}
+  - {fileID: 11400000, guid: 88af7c0af10a5074b972c3cb66d120e7, type: 2}
+  - {fileID: 11400000, guid: 5e7d9f9cfc245de46a5e91429559e3c3, type: 2}
+  - {fileID: 11400000, guid: a81a38c15629f8149b18f0696e77f877, type: 2}
+  - {fileID: 11400000, guid: 77e6a93d6d554f14fb40d7cae02f7f0f, type: 2}
   - {fileID: 11400000, guid: bb21a7a03057e584282d6f779bac0c26, type: 2}
   - {fileID: 11400000, guid: 8fba6ed0a5ea07145b7c2f3890f79244, type: 2}
   - {fileID: 11400000, guid: d21122b910188644fafbffe984b98eb1, type: 2}
+  - {fileID: 11400000, guid: e97267631073b954a83eda01432f4e1b, type: 2}
+  - {fileID: 11400000, guid: 571391316ecbc0f40852ae986041c952, type: 2}
+  - {fileID: 11400000, guid: 60b9229c51f5f5944820b32018cd9150, type: 2}
+  - {fileID: 11400000, guid: a00f4449478d03240a4bb92ca96e003b, type: 2}
+  - {fileID: 11400000, guid: 414781b5dd2df2b4fb7698b483a102ca, type: 2}
+  - {fileID: 11400000, guid: 8cd8c0a98e2174746a457134bc17859a, type: 2}
