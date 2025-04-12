@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
-  m_Name: Analyt
+  m_Name: serv-devops
   m_EditorClassIdentifier: 
-  id: 38
-  name: "\u0410\u043D\u0430\u043B\u0438\u0442\u0438\u043A"
+  id: 19
+  name: "\u0414\u0435\u0432\u043E\u043F\u0441"
   icon: {fileID: 0}
   characterictics:
-  - type: 2
-    value: 2
   - type: 0
+    value: 2
+  - type: 2
     value: 1

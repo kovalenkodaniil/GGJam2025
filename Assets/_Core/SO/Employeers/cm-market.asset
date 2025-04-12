@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
-  m_Name: Content Manager
+  m_Name: cm-market
   m_EditorClassIdentifier: 
-  id: 35
-  name: "\u041A\u043E\u043D\u0442\u0435\u043D\u0442\u0449\u0438\u043A"
+  id: 26
+  name: "\u041C\u0430\u0440\u043A\u0435\u0442\u043E\u043B\u043E\u0433"
   icon: {fileID: 0}
   characterictics:
-  - type: 2
-    value: 2
   - type: 1
     value: 1
+  - type: 2
+    value: 2
