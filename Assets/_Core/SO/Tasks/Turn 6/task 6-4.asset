@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d55c130b8925465ea7bd074329df387f, type: 3}
-  m_Name: Task49
+  m_Name: task 6-4
   m_EditorClassIdentifier: 
   id: 79
   name: "\u0410\u043D\u0438\u043C\u0435-\u0433\u0430\u0447\u0430"
@@ -34,4 +34,4 @@ MonoBehaviour:
     value: 3
   rewards:
   - type: 4
-    value: 3
+    value: 30

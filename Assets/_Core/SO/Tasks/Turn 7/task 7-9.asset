@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d55c130b8925465ea7bd074329df387f, type: 3}
-  m_Name: Task63
+  m_Name: task 7-9
   m_EditorClassIdentifier: 
   id: 93
   name: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C NFT"
@@ -31,4 +31,4 @@ MonoBehaviour:
     value: 2
   rewards:
   - type: 4
-    value: 3
+    value: 30
