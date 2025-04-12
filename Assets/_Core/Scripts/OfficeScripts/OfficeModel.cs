@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Core.Scripts.DeckLogic.Hand;
+using _Core.Scripts.Employees;
 using _Core.Scripts.Tasks;
+using _Core.StaticProvider;
 using R3;
+using Unity.VisualScripting;
 
 namespace _Core.Scripts.OfficeScripts
 {
@@ -16,16 +20,27 @@ namespace _Core.Scripts.OfficeScripts
 
         private List<ReactiveProperty<RewardAttribute>> _rewardAttributes;
 
-        public OfficeModel()
+        private List<OfficeConfig> _officeConfigs;
+        private HandModel _handModel;
+        private int _currentLevel = 1;
+        public int Experience;
+
+        public OfficeModel(HandModel handModel)
         {
-            _rewardAttributes = new List<ReactiveProperty<RewardAttribute>> {Graphic, Popularity, Quality, Gameplay, Profit};
+            _rewardAttributes = new List<ReactiveProperty<RewardAttribute>>
+                { Graphic, Popularity, Quality, Gameplay, Profit };
+            _handModel = handModel;
+
+            _officeConfigs = new List<OfficeConfig>();
+            _officeConfigs.AddRange(StaticDataProvider.Get<OfficeDataProvider>().asset.configs);
         }
 
-        public void TakeReward(TaskRewardConfig taskReward)
+        public void TakeReward(TaskRewardConfig taskReward, int experience)
         {
             foreach (RewardAttribute attribute in taskReward.rewardAttributes)
             {
-                ReactiveProperty<RewardAttribute> currentAttribute = _rewardAttributes.FirstOrDefault(a => a.Value.type == attribute.type);
+                ReactiveProperty<RewardAttribute> currentAttribute =
+                    _rewardAttributes.FirstOrDefault(a => a.Value.type == attribute.type);
 
                 if (currentAttribute == null)
                 {
@@ -34,8 +49,33 @@ namespace _Core.Scripts.OfficeScripts
 
                 //currentAttribute.Value.value += attribute.value;
 
-                currentAttribute.Value = new RewardAttribute(attribute.type, currentAttribute.Value.value + attribute.value);
+                currentAttribute.Value =
+                    new RewardAttribute(attribute.type, currentAttribute.Value.value + attribute.value);
             }
+
+            Experience += experience;
+            CheckExperience();
+        }
+
+        private OfficeConfig GetOfficeConfig(int level)
+        {
+            return _officeConfigs.FirstOrDefault(officeConfig => officeConfig.level == level);
+        }
+
+        private void CheckExperience()
+        {
+            OfficeConfig currentOfficeConfig = GetOfficeConfig(_currentLevel);
+            if (Experience >= currentOfficeConfig.experience)
+            {
+                Experience -= currentOfficeConfig.experience;
+                UpdateLevel();
+            }
+        }
+
+        private void UpdateLevel()
+        {
+            _handModel.CardsPerTurn++;
+            _currentLevel++;
         }
     }
 }

@@ -22,21 +22,21 @@ namespace _Core.Scripts.OfficeScripts
         [Inject] private TurnManager m_turnManager;
         [Inject] private TaskModel m_taskModel;
 
-        private List<TaskConfig> m_allTaskConfigs;
         private List<TaskButton> m_taskButtons;
 
         private TaskConfig _taskConfig;
         private CompositeDisposable _disposable;
         private TaskButton m_currentButton;
 
+        private List<TaskData> m_taskData;
+        public ReactiveProperty<bool> IsAllTaskComplete = new (false);
+
         public OfficeTaskController()
         {
-            m_allTaskConfigs = new List<TaskConfig>();
-            m_allTaskConfigs.AddRange(StaticDataProvider.Get<TaskDataProvider>().asset.tasks);
-
             _disposable = new CompositeDisposable();
 
             m_taskButtons = new List<TaskButton>();
+            m_taskData = new List<TaskData>();
         }
 
         public void Init()
@@ -79,14 +79,14 @@ namespace _Core.Scripts.OfficeScripts
         public void OpenTask(TaskButton taskButton)
         {
             m_currentButton = taskButton;
-            TaskConfig selectedTask = taskButton.Config;
+            TaskData selectedTask = taskButton.Data;
 
             m_taskView.Open();
-            m_taskView.Name = selectedTask.name;
-            m_taskView.Description = selectedTask.text;
-            m_taskView.Description = selectedTask.comment;
-            m_taskView.SetConditionCounters(selectedTask.conditions);
-            m_taskView.SetRewardCounters(selectedTask.rewards.rewardAttributes);
+            m_taskView.Name = selectedTask.Config.name;
+            m_taskView.Description = selectedTask.Config.text;
+            m_taskView.Comment = selectedTask.Config.text;
+            m_taskView.SetConditionCounters(selectedTask.Config.conditions);
+            m_taskView.SetRewardCounters(selectedTask.Config.rewards.rewardAttributes);
 
             m_taskModel.Init(selectedTask);
         }
@@ -118,24 +118,44 @@ namespace _Core.Scripts.OfficeScripts
                 m_currentButton.Disable();
 
             m_taskView.Close();
-            m_officeModel.TakeReward(m_taskModel.GetReward());
+            m_officeModel.TakeReward(m_taskModel.GetReward(), m_taskModel.Task.Config.difficultyConfig.experience);
+            m_taskModel.Task.IsCompleted = new ReactiveProperty<bool>(true);
+
+            CheckCompletedTasks();
+        }
+
+        private void CheckCompletedTasks()
+        {
+            foreach (TaskData task in m_taskData)
+            {
+                if (task.IsCompleted.Value != true)
+                {
+                    return;
+                }
+            }
+
+            IsAllTaskComplete = new ReactiveProperty<bool>(true);
         }
 
         private void CreateTasks()
         {
             m_taskButtons.AddRange(m_officeView.TaskButtons);
+            m_taskData.Clear();
 
             TurnConfig currentTurn = m_turnManager.CurrentTurn;
-            List<TaskConfig> currentPossibleTasks = new List<TaskConfig>();
-            currentPossibleTasks.AddRange(currentTurn.possibleTasks);
+            List<TaskData> currentPossibleTasks = new List<TaskData>();
+
+            currentTurn.possibleTasks.ForEach(config => currentPossibleTasks.Add(new TaskData(config)));
 
             foreach (TaskDifficulty difficulty in currentTurn.taskDifficulties)
             {
                 TaskButton taskButton = m_taskButtons[Random.Range(0, m_taskButtons.Count)];
                 m_taskButtons.Remove(taskButton);
 
-                taskButton.Init(GetRandomTask(difficulty, currentPossibleTasks));
+                TaskData task = GetRandomTask(difficulty, currentPossibleTasks);
 
+                m_taskData.Add(task);
+                taskButton.Init(task);
                 taskButton.TaskSelected += OpenTask;
             }
         }
@@ -150,31 +170,17 @@ namespace _Core.Scripts.OfficeScripts
             });
         }
 
-        private TaskConfig GetRandomTask()
-        {
-            if (m_allTaskConfigs.Count == 0)
-            {
-                m_allTaskConfigs.AddRange(StaticDataProvider.Get<TaskDataProvider>().asset.tasks);
-            }
-
-            TaskConfig randomConfig = m_allTaskConfigs[Random.Range(0, m_allTaskConfigs.Count)];
-
-            m_allTaskConfigs.Remove(randomConfig);
-
-            return randomConfig;
-        }
-
         [CanBeNull]
-        private TaskConfig GetRandomTask(TaskDifficulty difficulty, List<TaskConfig> possibleTasks)
+        private TaskData GetRandomTask(TaskDifficulty difficulty, List<TaskData> possibleTasks)
         {
-            List<TaskConfig> filteredConfigs = possibleTasks.Where(task => task.difficulty == difficulty).ToList();
+            List<TaskData> filteredConfigs = possibleTasks.Where(task => task.Config.difficultyConfig.difficulty == difficulty).ToList();
             if (filteredConfigs.Count == 0)
             {
                 Debug.LogWarning($"No cards with difficulty {difficulty} found!");
                 return null;
             }
 
-            TaskConfig randomConfig = filteredConfigs[Random.Range(0, filteredConfigs.Count)];
+            TaskData randomConfig = filteredConfigs[Random.Range(0, filteredConfigs.Count)];
 
             possibleTasks.Remove(randomConfig);
             return randomConfig;

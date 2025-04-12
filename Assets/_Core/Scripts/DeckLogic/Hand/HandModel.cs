@@ -10,7 +10,7 @@ namespace _Core.Scripts.DeckLogic.Hand
     public class HandModel
     {
         private TrashModel m_trashModel;
-
+        public int CardsPerTurn;
         public List<EmployeeData> Employees;
 
         public event Action<EmployeeData> EmployeesAdded;
@@ -21,6 +21,7 @@ namespace _Core.Scripts.DeckLogic.Hand
             Employees = new List<EmployeeData>();
 
             m_trashModel = trashModel;
+            CardsPerTurn = 3;
         }
 
         public void DiscardHand()

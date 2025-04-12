@@ -19,6 +19,7 @@ namespace _Core.Scripts.TurnManagerScripts
 
         public EnumTurnState CurrentState { get; private set; }
 
+        public ReactiveProperty<bool> IsGameOver = new(false);
         private int _stateAmount;
 
         public TurnManager()
@@ -59,7 +60,12 @@ namespace _Core.Scripts.TurnManagerScripts
             switch (state)
             {
                 case EnumTurnState.StartTurn:
-                    ChangeTurn();
+                    if (TryChangeTurn() == false)
+                    {
+                        IsGameOver = new ReactiveProperty<bool>(true);
+                        return;
+                    }
+                    
                     OnTurnStarted.OnNext(Unit.Default);
                     break;
 
@@ -73,10 +79,17 @@ namespace _Core.Scripts.TurnManagerScripts
             }
         }
 
-        private void ChangeTurn()
+        private bool TryChangeTurn()
         {
             TurnNumber++;
             CurrentTurn = m_turnConfigs.FirstOrDefault(a => a.turnNumber == TurnNumber);
+
+            if (CurrentTurn == null)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

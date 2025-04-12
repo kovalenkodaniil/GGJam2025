@@ -17,7 +17,8 @@ MonoBehaviour:
     (\u0412\u0442\u043E\u0440\u043E\u0439 \u0445\u043E\u0434)"
   text: "\u0422\u0441\u0441\u0441\u0441, \u043D\u0438\u043A\u043E\u043C\u0443 \u043D\u0435
     \u0433\u043E\u0432\u043E\u0440\u0438\u0442\u0435"
-  difficulty: 0
+  difficultyConfig: {fileID: 11400000, guid: 09696e6a496ccee48aa858f47d786bf4, type: 2}
+  comment: TOP SECRET
   turnNumber: 2
   conditions:
   - type: 0

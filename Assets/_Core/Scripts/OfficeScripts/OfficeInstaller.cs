@@ -29,6 +29,7 @@ namespace _Core.Scripts.OfficeScripts
         [Inject] private DeckView m_deckView;
         [Inject] private TrashView m_trashView;
         [Inject] private OfficeController m_officeController;
+        [Inject] private GameEndController m_gameEndController;
 
         public void Start()
         {
@@ -37,6 +38,7 @@ namespace _Core.Scripts.OfficeScripts
 
             CreateDeck();
 
+            m_gameEndController.Init();
             m_taskController.Init();
             m_officeController.Init();
             m_deckController.Init();

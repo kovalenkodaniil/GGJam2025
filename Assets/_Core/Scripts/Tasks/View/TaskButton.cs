@@ -8,15 +8,15 @@ namespace _Core.Scripts.Tasks.View
     {
         [SerializeField] private Button m_button;
 
-        private TaskConfig m_config;
+        private TaskData m_data;
 
-        public TaskConfig Config => m_config;
+        public TaskData Data => m_data;
 
         public event Action<TaskButton> TaskSelected;
 
-        public void Init(TaskConfig config)
+        public void Init(TaskData data)
         {
-            m_config = config;
+            m_data = data;
 
             gameObject.SetActive(true);
 

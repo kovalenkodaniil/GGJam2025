@@ -723,7 +723,7 @@ MonoBehaviour:
   m_conatainer: {fileID: 931600318607983935}
   m_name: {fileID: 2417419245279772405}
   m_description: {fileID: 8368955402167937412}
-  m_comment: {fileID: 0}
+  m_comment: {fileID: 4283512796335374457}
   m_empoyeesPanel: {fileID: 3325344952880498247}
   m_completeButton: {fileID: 6152281280776338575}
   m_conditionView:

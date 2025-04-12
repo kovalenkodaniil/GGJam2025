@@ -9,16 +9,16 @@ namespace _Core.Scripts.Tasks
 {
     public class TaskModel
     {
-        public TaskConfig Task;
+        public TaskData Task;
         public List<EmployeeData> Employees = new();
         public ReactiveProperty<bool> IsReady = new(false);
         public List<CharacterAttribute> CurrentConditions = new();
         private TaskRewardConfig _taskReward;
 
-        public void Init(TaskConfig task)
+        public void Init(TaskData task)
         {
             Task = task;
-            _taskReward = task.rewards;
+            _taskReward = task.Config.rewards;
         }
 
         public void AddEmployee(EmployeeData employee)
@@ -48,7 +48,7 @@ namespace _Core.Scripts.Tasks
 
         public void CheckTaskConditions()
         {
-            foreach (CharacterAttribute attribute in Task.conditions)
+            foreach (CharacterAttribute attribute in Task.Config.conditions)
             {
                 CharacterAttribute currentAttribute = CurrentConditions.FirstOrDefault(a => a.type == attribute.type);
 
