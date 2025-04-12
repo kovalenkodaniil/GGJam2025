@@ -75,9 +75,9 @@ namespace _Core.Scripts.Tasks.View
 
         private void CompleteTask()
         {
-            OnComplete?.Invoke();
-
             m_empoyeesPanel.TrashEmployee();
+
+            OnComplete?.Invoke();
         }
     }
 }
