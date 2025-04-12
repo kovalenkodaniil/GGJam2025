@@ -25,7 +25,6 @@ namespace _Core.Scripts.DeckLogic.Hand
 
         public void DiscardHand()
         {
-            Debug.Log($"DiscardHand");
             Employees.ForEach(card =>
             {
                 m_trashModel.AddCard(card);

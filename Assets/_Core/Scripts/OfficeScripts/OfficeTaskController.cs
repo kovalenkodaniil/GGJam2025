@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
 using _Core.Scripts.Employees;
+using System.Linq;
 using _Core.Scripts.OfficeScripts.View;
 using _Core.Scripts.Tasks;
 using _Core.Scripts.Tasks.View;
 using _Core.Scripts.TurnManagerScripts;
 using _Core.StaticProvider;
+using JetBrains.Annotations;
 using R3;
+using UnityEditor;
 using UnityEngine;
 using VContainer;
 
@@ -29,7 +32,6 @@ namespace _Core.Scripts.OfficeScripts
         public OfficeTaskController()
         {
             m_allTaskConfigs = new List<TaskConfig>();
-
             m_allTaskConfigs.AddRange(StaticDataProvider.Get<TaskDataProvider>().asset.tasks);
 
             _disposable = new CompositeDisposable();
@@ -122,12 +124,16 @@ namespace _Core.Scripts.OfficeScripts
         {
             m_taskButtons.AddRange(m_officeView.TaskButtons);
 
-            for (int i = 0; i < 3; i++)
+            TurnConfig currentTurn = m_turnManager.CurrentTurn;
+            List<TaskConfig> currentPossibleTasks = new List<TaskConfig>();
+            currentPossibleTasks.AddRange(currentTurn.possibleTasks);
+
+            foreach (TaskDifficulty difficulty in currentTurn.taskDifficulties)
             {
                 TaskButton taskButton = m_taskButtons[Random.Range(0, m_taskButtons.Count)];
                 m_taskButtons.Remove(taskButton);
 
-                taskButton.Init(GetRandomTask());
+                taskButton.Init(GetRandomTask(difficulty, currentPossibleTasks));
 
                 taskButton.TaskSelected += OpenTask;
             }
@@ -154,6 +160,22 @@ namespace _Core.Scripts.OfficeScripts
 
             m_allTaskConfigs.Remove(randomConfig);
 
+            return randomConfig;
+        }
+
+        [CanBeNull]
+        private TaskConfig GetRandomTask(TaskDifficulty difficulty, List<TaskConfig> possibleTasks)
+        {
+            List<TaskConfig> filteredConfigs = possibleTasks.Where(task => task.difficulty == difficulty).ToList();
+            if (filteredConfigs.Count == 0)
+            {
+                Debug.LogWarning($"No cards with difficulty {difficulty} found!");
+                return null;
+            }
+
+            TaskConfig randomConfig = filteredConfigs[Random.Range(0, filteredConfigs.Count)];
+
+            possibleTasks.Remove(randomConfig);
             return randomConfig;
         }
     }

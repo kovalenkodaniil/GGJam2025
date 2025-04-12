@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using _Core.StaticProvider;
 using R3;
 using UnityEngine;
 
@@ -9,6 +12,10 @@ namespace _Core.Scripts.TurnManagerScripts
         public Subject<Unit> OnTurnStarted;
         public Subject<Unit> OnPlayerActionStarted;
         public Subject<Unit> OnTurnEnded;
+
+        public int TurnNumber;
+        public TurnConfig CurrentTurn;
+        private List<TurnConfig> m_turnConfigs;
 
         public EnumTurnState CurrentState { get; private set; }
 
@@ -21,6 +28,11 @@ namespace _Core.Scripts.TurnManagerScripts
             OnTurnStarted = new Subject<Unit>();
             OnPlayerActionStarted = new Subject<Unit>();
             OnTurnEnded = new Subject<Unit>();
+
+            m_turnConfigs = new List<TurnConfig>();
+            m_turnConfigs.AddRange(StaticDataProvider.Get<TurnDataProvider>().asset.turns);
+
+            TurnNumber = 0;
         }
 
         public void Dispose()
@@ -47,6 +59,7 @@ namespace _Core.Scripts.TurnManagerScripts
             switch (state)
             {
                 case EnumTurnState.StartTurn:
+                    ChangeTurn();
                     OnTurnStarted.OnNext(Unit.Default);
                     break;
 
@@ -58,6 +71,12 @@ namespace _Core.Scripts.TurnManagerScripts
                     OnTurnEnded.OnNext(Unit.Default);
                     break;
             }
+        }
+
+        private void ChangeTurn()
+        {
+            TurnNumber++;
+            CurrentTurn = m_turnConfigs.FirstOrDefault(a => a.turnNumber == TurnNumber);
         }
     }
 }

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38027d5545ad4c209ca523563ade76a7, type: 3}
+  m_Name: TurnAsset
+  m_EditorClassIdentifier: 
+  turns:
+  - id: 1
+    turnNumber: 1
+    possibleTasks:
+    - {fileID: 11400000, guid: bb21a7a03057e584282d6f779bac0c26, type: 2}
+    - {fileID: 11400000, guid: df385631264d8214397ed2943757143f, type: 2}
+    - {fileID: 11400000, guid: 46b4f3c8f72687e429433a76bb1d5c36, type: 2}
+    taskDifficulties: 000000000000000000000000
+  - id: 1
+    turnNumber: 2
+    possibleTasks:
+    - {fileID: 11400000, guid: e8132a9ddb34787468df96b5326f4f25, type: 2}
+    - {fileID: 11400000, guid: cce4ccbbc13895f4f9d3b0ea5bbdb21e, type: 2}
+    - {fileID: 11400000, guid: faf9092c27074864f813e2ae976259ba, type: 2}
+    taskDifficulties: 000000000000000000000000
