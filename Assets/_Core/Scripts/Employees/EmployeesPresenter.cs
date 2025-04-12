@@ -1,6 +1,7 @@
 ﻿using System;
 using _Core.Scripts.Employees.View;
 using _Core.Scripts.Tasks.View;
+using _Core.StaticProvider;
 using R3;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -105,6 +106,8 @@ namespace _Core.Scripts.Employees
 
         private void AddOnTaskPanel()
         {
+            SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.GetRandomManClip());
+
             m_employeesTaskPanel.AddEmployee(m_data, m_view);
             isInTask = true;
 

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498e1da6a07d457b98434e1849c0c5b2, type: 3}
+  m_Name: SoundAsset
+  m_EditorClassIdentifier: 
+  mainTheme: {fileID: 8300000, guid: 377f651a0ce498a45b33c493c29fc456, type: 3}
+  buttonClick: {fileID: 8300000, guid: c5c242ebe67b50a40b364632318a2a64, type: 3}
+  stampClick: {fileID: 8300000, guid: b09f56b6fcb0fad43b76345af2f1ace1, type: 3}
+  taskCreated: {fileID: 8300000, guid: 7197db9949e9ce548b8bd57939cbcc01, type: 3}
+  mansClips:
+  - {fileID: 8300000, guid: 0bb03638f5201784294c86801e166904, type: 3}
+  - {fileID: 8300000, guid: ab5d70a50937ca84289517992909f93e, type: 3}
+  - {fileID: 8300000, guid: 65685c668f32ac54293a9cf2b7ca0ed6, type: 3}
+  - {fileID: 8300000, guid: 5a19ccd9ea17e444aa9646d669fbf471, type: 3}
+  - {fileID: 8300000, guid: 77d05495e5d6e2c44ab65333ddde7af4, type: 3}
+  - {fileID: 8300000, guid: 5b214822d1a42bd4187cdb758fe366e8, type: 3}
+  - {fileID: 8300000, guid: 0e22a83ee4748ba49a14b3a0c7581ce9, type: 3}
+  womenClips: []
