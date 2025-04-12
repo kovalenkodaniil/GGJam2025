@@ -1,5 +1,6 @@
 ﻿using System;
 using R3;
+using UnityEngine;
 
 namespace _Core.Scripts.TurnManagerScripts
 {
@@ -29,7 +30,7 @@ namespace _Core.Scripts.TurnManagerScripts
             OnTurnEnded.OnCompleted();
         }
 
-        public void StartBattle()
+        public void Init()
         {
             CurrentState = EnumTurnState.StartTurn;
             StartStep(EnumTurnState.StartTurn);
@@ -38,6 +39,7 @@ namespace _Core.Scripts.TurnManagerScripts
         public void NextStep()
         {
             CurrentState = (EnumTurnState) (((int) CurrentState + 1) % _stateAmount);
+            Debug.Log($"CurrentState = {CurrentState}");
             StartStep(CurrentState);
         }
 

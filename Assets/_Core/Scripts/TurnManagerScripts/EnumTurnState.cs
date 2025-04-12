@@ -4,6 +4,6 @@ namespace _Core.Scripts.TurnManagerScripts
     {
         StartTurn = 0,
         PlayerAction = 1,
-        EndTurn = 3
+        EndTurn = 2
     }
 }

@@ -1,14 +1,13 @@
-﻿using System;
-using R3;
+﻿using R3;
 using TMPro;
 using UnityEngine;
 using VContainer;
 
-namespace _Core.Scripts.DeckLogic.Deck
+namespace _Core.Scripts.DeckLogic.Trash
 {
-    public class DeckView : MonoBehaviour
+    public class TrashView : MonoBehaviour
     {
-        [Inject] private DeckModel m_deckModel;
+        [Inject] private TrashModel m_trashModel;
 
         [SerializeField] private TMP_Text m_count;
 
@@ -18,7 +17,7 @@ namespace _Core.Scripts.DeckLogic.Deck
         {
             m_disposable = new CompositeDisposable();
 
-            m_deckModel.CardCount
+            m_trashModel.CardCount
                 .Subscribe(UpdateCount)
                 .AddTo(m_disposable);
         }

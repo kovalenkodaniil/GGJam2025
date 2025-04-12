@@ -17,7 +17,8 @@ namespace _Core.Scripts.DeckLogic.Deck
         public DeckModel(TrashModel trash)
         {
             Employees = new List<EmployeeData>();
-            CardCount = new ReactiveProperty<int>();
+
+            CardCount = new ReactiveProperty<int>(0);
 
             _trash = trash;
         }
@@ -50,7 +51,7 @@ namespace _Core.Scripts.DeckLogic.Deck
         {
             List<EmployeeData> recievedEmployees = new List<EmployeeData>();
 
-            for (int i = 1; i < count; i++)
+            for (int i = 0; i < count; i++)
             {
                 if (Employees.Count == 0)
                 {

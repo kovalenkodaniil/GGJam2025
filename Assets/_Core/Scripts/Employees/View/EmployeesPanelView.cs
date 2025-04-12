@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Core.Scripts.DeckLogic.Hand;
 using _Core.Scripts.Tasks.View;
 using _Core.StaticProvider;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace _Core.Scripts.Employees.View
     public class EmployeesPanelView : MonoBehaviour
     {
         [Inject] private TaskView m_taskView;
+        [Inject] private HandModel m_handModel;
 
         [SerializeField] private Transform m_employeesParent;
         [SerializeField] private EmployeesWidget m_employeesViewPrefab;
@@ -17,13 +19,20 @@ namespace _Core.Scripts.Employees.View
 
         public void Init()
         {
-            CreateCharacters();
+            m_presenters = new List<EmployeesPresenter>();
+
+            m_handModel.EmployeesAdded += CreateEmployee;
+            m_handModel.EmployeesRemoved += DestroyEmployee;
+
             EnablePresenters();
         }
 
         private void OnDestroy()
         {
             m_presenters.ForEach(presenter => presenter.Disable());
+
+            m_handModel.EmployeesAdded -= CreateEmployee;
+            m_handModel.EmployeesRemoved -= DestroyEmployee;
         }
 
         private void EnablePresenters()
@@ -31,17 +40,23 @@ namespace _Core.Scripts.Employees.View
             m_presenters.ForEach(presenter => presenter.Enable());
         }
 
-        private void CreateCharacters()
+        private void CreateEmployee(EmployeeData employeeData)
         {
-            List<EmployeeConfig> employeeConfigs = StaticDataProvider.Get<EmployeeDataProvider>().asset.characters;
-            m_presenters = new List<EmployeesPresenter>();
+            EmployeesWidget view = Instantiate(m_employeesViewPrefab, m_employeesParent);
 
-            foreach (var config in employeeConfigs)
-            {
-                EmployeesWidget view = Instantiate(m_employeesViewPrefab, m_employeesParent);
+            EmployeesPresenter newPresenter = new EmployeesPresenter(view, employeeData.Config, m_taskView);
 
-                m_presenters.Add(new EmployeesPresenter(view, config, m_taskView));
-            }
+            newPresenter.Enable();
+            m_presenters.Add(newPresenter);
+        }
+
+        private void DestroyEmployee(EmployeeData employeeData)
+        {
+            EmployeesPresenter removedPresenter = m_presenters.Find(presenter => presenter.Config.id == employeeData.Config.id);
+
+            removedPresenter.Disable();
+
+            m_presenters.Remove(removedPresenter);
         }
     }
 }

@@ -13,12 +13,17 @@ namespace _Core.Scripts.Employees.View
         public Subject<Unit> OnDragHasBegun = new();
 
         [SerializeField] private Image _portrait;
+        [SerializeField] private TMP_Text m_name;
         [SerializeField] private GameObject _emptyState;
         [SerializeField] private GameObject _employeesState;
         [SerializeField] private List<TMP_Text> m_characteristicCounters;
 
         public Sprite Portrait { set => _portrait.sprite = value; }
+
+        public string Name { set => m_name.text = value; }
+
         public List<TMP_Text> Counters => m_characteristicCounters;
+
         public bool IsEmpty { get; private set; }
 
         public void SetEmptyState()

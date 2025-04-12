@@ -17,7 +17,7 @@ namespace _Core.Scripts.Employees
     {
         Technology,
         Creativity,
-        Stress
+        SoftSkill
     }
 
     [Serializable]

@@ -17,6 +17,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c5c8a841e9afd5c48871a62809e350f0, type: 2}
   - {fileID: 11400000, guid: f06a04cb0eaf9174abba9308a5c2349e, type: 2}
   - {fileID: 11400000, guid: 40ede64ccaa9f5245a306e4b4e37aad4, type: 2}
+  - {fileID: 11400000, guid: 0e08b473789e44e4fa68ed177038d4a4, type: 2}
+  - {fileID: 11400000, guid: dd1d7e3e1a89efc49968d54b3fef2d35, type: 2}
+  - {fileID: 11400000, guid: de481efbcfb28a64084d3d1b42654973, type: 2}
+  - {fileID: 11400000, guid: 322dcf7cf0e72e34f80813bc66f05ee5, type: 2}
   technologyIcon: {fileID: 0}
   creativityIcon: {fileID: 0}
   stressIcon: {fileID: 0}

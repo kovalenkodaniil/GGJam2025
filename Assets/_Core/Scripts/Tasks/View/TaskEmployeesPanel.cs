@@ -51,6 +51,7 @@ namespace _Core.Scripts.Tasks.View
         {
             view.SetCharacterState();
             view.Portrait = data.icon;
+            view.Name = data.name;
 
             for (int i = 0; i < data.characterictics.Count; i++)
             {

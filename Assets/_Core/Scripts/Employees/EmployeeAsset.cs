@@ -11,6 +11,6 @@ namespace _Core.Scripts.Employees
         [Header("Employee Icon")]
         public Sprite technologyIcon;
         public Sprite creativityIcon;
-        public Sprite stressIcon;
+        public Sprite softSkillIcon;
     }
 }

@@ -19,6 +19,8 @@ namespace _Core.Scripts.Employees
         private Transform m_defaultParent;
         private Transform m_dragParent;
 
+        public EmployeeConfig Config => m_config;
+
         public EmployeesPresenter(EmployeesWidget view, EmployeeConfig config, TaskView taskView)
         {
             m_view = view;
@@ -47,6 +49,8 @@ namespace _Core.Scripts.Employees
         public void Disable()
         {
             m_disposable.Dispose();
+
+            Object.Destroy(m_view.gameObject);
         }
 
         private void SetDragParent()
@@ -73,6 +77,7 @@ namespace _Core.Scripts.Employees
         {
             m_view.SetCharacterState();
             m_view.Portrait = m_config.icon;
+            m_view.Name = m_config.name;
 
             for (int i = 0; i < m_config.characterictics.Count; i++)
             {
