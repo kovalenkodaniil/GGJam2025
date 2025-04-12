@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
   m_Name: art-sound
   m_EditorClassIdentifier: 
-  id: 10
+  id: 8
   name: Sound-designer
   icon: {fileID: 21300000, guid: 3d6c608603276bc4e87ad26a7d722f0d, type: 3}
   characterictics:
   - type: 0
-    value: 2
-  - type: 1
     value: 1
+  - type: 1
+    value: 2

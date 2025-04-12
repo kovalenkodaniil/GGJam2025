@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
-  m_Name: Community 3
+  m_Name: tech-pm
   m_EditorClassIdentifier: 
-  id: 34
-  name: "\u041F\u0438\u0430\u0440\u0449\u0438\u043A"
+  id: 30
+  name: PM
   icon: {fileID: 0}
   characterictics:
   - type: 2
     value: 2
-  - type: 1
+  - type: 0
     value: 1

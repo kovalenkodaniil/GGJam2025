@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
-  m_Name: Analyt
+  m_Name: tech-hr
   m_EditorClassIdentifier: 
-  id: 38
-  name: "\u0410\u043D\u0430\u043B\u0438\u0442\u0438\u043A"
+  id: 29
+  name: HR
   icon: {fileID: 0}
   characterictics:
   - type: 2
