@@ -10,7 +10,9 @@ namespace _Core.Scripts.Tasks.View
 
         private TaskConfig m_config;
 
-        public event Action<TaskConfig> TaskSelected;
+        public TaskConfig Config => m_config;
+
+        public event Action<TaskButton> TaskSelected;
 
         public void Init(TaskConfig config)
         {
@@ -29,7 +31,7 @@ namespace _Core.Scripts.Tasks.View
 
         private void SelectTask()
         {
-            TaskSelected?.Invoke(m_config);
+            TaskSelected?.Invoke(this);
         }
     }
 }

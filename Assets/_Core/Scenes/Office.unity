@@ -391,7 +391,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2133841062886769621, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
       propertyPath: m_text
-      value: "\u0433\u0435\u0439\u043C."
+      value: "\u043F\u0440\u043E\u0444."
       objectReference: {fileID: 0}
     - target: {fileID: 2250847961955284072, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
       propertyPath: m_Name
@@ -431,7 +431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6545350355135479324, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 93.732
+      value: 99.8512
       objectReference: {fileID: 0}
     - target: {fileID: 6545350355135479324, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
       propertyPath: m_SizeDelta.y

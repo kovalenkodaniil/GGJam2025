@@ -24,6 +24,7 @@ namespace _Core.Scripts.OfficeScripts
 
         private TaskConfig _taskConfig;
         private CompositeDisposable _disposable;
+        private TaskButton m_currentButton;
 
         public OfficeTaskController()
         {
@@ -73,8 +74,11 @@ namespace _Core.Scripts.OfficeScripts
             _disposable?.Dispose();
         }
 
-        public void OpenTask(TaskConfig selectedTask)
+        public void OpenTask(TaskButton taskButton)
         {
+            m_currentButton = taskButton;
+            TaskConfig selectedTask = taskButton.Config;
+
             m_taskView.Open();
             m_taskView.Name = selectedTask.name;
             m_taskView.Description = selectedTask.text;
@@ -107,6 +111,9 @@ namespace _Core.Scripts.OfficeScripts
 
         private void CompleteTask()
         {
+            if (m_currentButton != null)
+                m_currentButton.Disable();
+
             m_taskView.Close();
             m_officeModel.TakeReward(m_taskModel.GetReward());
         }
