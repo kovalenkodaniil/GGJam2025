@@ -25,6 +25,13 @@ namespace _Core.Scripts.Tasks
     {
         public EnumReward type;
         public int value;
+
+        public RewardAttribute() {}
+        public RewardAttribute(EnumReward type, int value)
+        {
+            this.type = type;
+            this.value = value;
+        }
     }
 
 }
