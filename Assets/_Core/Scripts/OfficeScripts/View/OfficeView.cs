@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using _Core.Scripts.Tasks.View;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +10,9 @@ namespace _Core.Scripts.OfficeScripts.View
     {
         [SerializeField] private Button m_taskButton;
         [SerializeField] private Button m_endTurnButton;
+        [SerializeField] private List<TaskButton> m_taskButtons;
+
+        public List<TaskButton> TaskButtons => m_taskButtons;
 
         public event Action TackClicked;
 
@@ -27,7 +32,6 @@ namespace _Core.Scripts.OfficeScripts.View
 
         public void SetEnableTurnButton(bool isEnabling)
         {
-            Debug.Log($"SetEnableTurnButton {isEnabling}");
             m_endTurnButton.interactable = isEnabling;
         }
 

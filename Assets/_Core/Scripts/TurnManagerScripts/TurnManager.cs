@@ -39,7 +39,6 @@ namespace _Core.Scripts.TurnManagerScripts
         public void NextStep()
         {
             CurrentState = (EnumTurnState) (((int) CurrentState + 1) % _stateAmount);
-            Debug.Log($"CurrentState = {CurrentState}");
             StartStep(CurrentState);
         }
 

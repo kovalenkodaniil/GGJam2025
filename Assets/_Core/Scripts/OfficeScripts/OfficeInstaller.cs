@@ -37,10 +37,10 @@ namespace _Core.Scripts.OfficeScripts
 
             CreateDeck();
 
+            m_taskController.Init();
             m_officeController.Init();
             m_deckController.Init();
             m_turnManager.Init();
-            m_taskController.Init();
 
             m_deckView.Init();
             m_trashView.Init();
