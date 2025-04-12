@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
-  m_Name: Unity
+  m_Script: {fileID: 11500000, guid: d55c130b8925465ea7bd074329df387f, type: 3}
+  m_Name: Task6
   m_EditorClassIdentifier: 
-  id: 28
-  name: "\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A"
-  icon: {fileID: 0}
-  characterictics:
-  - type: 0
-    value: 2
-  - type: 1
-    value: 1
+  id: 34
+  name: 
+  text: 
+  difficultyConfig: {fileID: 0}
+  comment: 
+  turnNumber: 0
+  conditions: []
+  rewards: []

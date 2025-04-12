@@ -18,10 +18,16 @@ MonoBehaviour:
   difficultyConfig: {fileID: 11400000, guid: 09696e6a496ccee48aa858f47d786bf4, type: 2}
   comment: "\u0411\u044B\u0442\u044C \u0432\u0442\u043E\u0440\u044B\u043C \u043D\u0435
     \u0442\u0430\u043A \u0443\u0436 \u0438 \u043F\u043B\u043E\u0445\u043E"
-  turnNumber: 1
+  turnNumber: 9
   conditions:
   - type: 0
     value: 2
   - type: 1
     value: 1
-  rewards: {fileID: 11400000, guid: f42a87763a676fa489483ecc051d8acf, type: 2}
+  rewards:
+  - type: 0
+    value: 0
+  - type: 0
+    value: 0
+  - type: 0
+    value: 0

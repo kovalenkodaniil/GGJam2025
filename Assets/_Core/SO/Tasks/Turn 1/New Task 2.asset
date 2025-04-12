@@ -18,10 +18,16 @@ MonoBehaviour:
     \u0433\u043E\u0432\u043E\u0440\u0438\u0442\u0435"
   difficultyConfig: {fileID: 11400000, guid: 09696e6a496ccee48aa858f47d786bf4, type: 2}
   comment: TOP SECRET
-  turnNumber: 1
+  turnNumber: 9
   conditions:
   - type: 0
     value: 2
   - type: 1
     value: 1
-  rewards: {fileID: 11400000, guid: c48dd0c641068ee4a88470e5a8d5288f, type: 2}
+  rewards:
+  - type: 0
+    value: 0
+  - type: 0
+    value: 0
+  - type: 0
+    value: 0

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
   m_Name: Client
   m_EditorClassIdentifier: 
-  id: 
-  name: 
+  id: 29
+  name: "UI-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442"
   icon: {fileID: 0}
   characterictics:
   - type: 0
