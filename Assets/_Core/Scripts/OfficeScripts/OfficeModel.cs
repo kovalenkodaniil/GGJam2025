@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using _Core.Scripts.DeckLogic.Hand;
-using _Core.Scripts.Employees;
 using _Core.Scripts.Tasks;
 using _Core.StaticProvider;
 using R3;
-using Unity.VisualScripting;
 
 namespace _Core.Scripts.OfficeScripts
 {
@@ -18,7 +15,7 @@ namespace _Core.Scripts.OfficeScripts
         public ReactiveProperty<RewardAttribute> Gameplay = new(new RewardAttribute(EnumReward.Gameplay, 0));
         public ReactiveProperty<RewardAttribute> Profit = new(new RewardAttribute(EnumReward.Profit, 0));
 
-        private List<ReactiveProperty<RewardAttribute>> _rewardAttributes;
+        public List<ReactiveProperty<RewardAttribute>> _rewardAttributes;
 
         private List<OfficeConfig> _officeConfigs;
         private HandModel _handModel;
@@ -46,8 +43,6 @@ namespace _Core.Scripts.OfficeScripts
                 {
                     continue;
                 }
-
-                //currentAttribute.Value.value += attribute.value;
 
                 currentAttribute.Value =
                     new RewardAttribute(attribute.type, currentAttribute.Value.value + attribute.value);

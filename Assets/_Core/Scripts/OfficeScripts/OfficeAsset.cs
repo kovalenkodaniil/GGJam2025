@@ -7,5 +7,10 @@ namespace _Core.Scripts.OfficeScripts
     public class OfficeAsset : ScriptableObject
     {
         public List<OfficeConfig> configs;
+
+        [Header("Endings")]
+        public List<EndingConfig> endingsByGameStat;
+
+        public string endingLose;
     }
 }
