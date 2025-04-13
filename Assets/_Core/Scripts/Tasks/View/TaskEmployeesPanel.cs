@@ -26,6 +26,11 @@ namespace _Core.Scripts.Tasks.View
 
         public bool IsPositionInPanel(Vector3 position)
         {
+            if (gameObject.activeInHierarchy == false)
+            {
+                return false;
+            }
+
             Vector3 localPosition = m_rect.InverseTransformPoint(position);
 
             return m_rect.rect.Contains(localPosition);
@@ -37,6 +42,12 @@ namespace _Core.Scripts.Tasks.View
             slot.SetWidget(widget, data);
 
             EmpoyeesAdded?.Invoke(data);
+        }
+
+        public void ReplaceEmployee(EmployeeData data, EmployeesWidget widget)
+        {
+            SlotView slot = m_slots.Find(slot => slot.Data.Config.id == data.Config.id);
+            slot.SetWidget(widget, data);
         }
 
         public void RemoveEmployee(EmployeeData data)

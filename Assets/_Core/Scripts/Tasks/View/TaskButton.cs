@@ -1,4 +1,5 @@
 ﻿using System;
+using _Core.StaticProvider;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +32,8 @@ namespace _Core.Scripts.Tasks.View
 
         private void SelectTask()
         {
+            SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.buttonClick);
+
             TaskSelected?.Invoke(this);
         }
     }
