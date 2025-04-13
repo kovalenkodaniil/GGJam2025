@@ -2,6 +2,7 @@
 using _Core.Scripts.DeckLogic.Deck;
 using _Core.Scripts.DeckLogic.Hand;
 using _Core.Scripts.DeckLogic.Trash;
+using _Core.Scripts.OfficeScripts;
 using _Core.Scripts.Tasks.View;
 using _Core.Scripts.TurnManagerScripts;
 using R3;
@@ -17,6 +18,7 @@ namespace _Core.Scripts.Employees.View
         [Inject] private TurnManager m_turnManager;
         [Inject] private DeckView m_deckView;
         [Inject] private TrashView m_trashView;
+        [Inject] private OfficeModel m_officeModel;
 
         [SerializeField] private Transform m_employeesParent;
         [SerializeField] private EmployeesWidget m_employeesViewPrefab;
@@ -34,6 +36,7 @@ namespace _Core.Scripts.Employees.View
 
             m_handModel.EmployeesAdded += CreateEmployee;
             m_handModel.EmployeesRemoved += DestroyEmployee;
+            m_officeModel.LevelUped += UpdateLock;
 
             EnablePresenters();
 
@@ -50,6 +53,7 @@ namespace _Core.Scripts.Employees.View
 
             m_handModel.EmployeesAdded -= CreateEmployee;
             m_handModel.EmployeesRemoved -= DestroyEmployee;
+            m_officeModel.LevelUped -= UpdateLock;
         }
 
         private void EnablePresenters()
@@ -91,7 +95,15 @@ namespace _Core.Scripts.Employees.View
 
         private void ResetSlots()
         {
-            m_slotViews.ForEach(view => view.IsEmpty = true);
+            m_slotViews.ForEach(view =>
+            {
+                view.IsEmpty = true;
+            });
+        }
+
+        private void UpdateLock()
+        {
+            m_slotViews.Find(slot => slot.IsLock).PlayUnlockAnimation();
         }
     }
 }

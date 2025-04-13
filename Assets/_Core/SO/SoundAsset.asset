@@ -38,10 +38,7 @@ MonoBehaviour:
   legendaryClips:
   - {fileID: 8300000, guid: 00b12d3ab6d22c44b830a1e0b3fbc043, type: 3}
   - {fileID: 8300000, guid: e7dc3c2083b83ae468f257b0226743db, type: 3}
-  - {fileID: 8300000, guid: cd0cc439a18ceb94cb4ac05493be6f9e, type: 3}
   - {fileID: 8300000, guid: 8227340260075c045b74ec6edc7b2c4b, type: 3}
-  - {fileID: 8300000, guid: 88e795bc4975a4e468d0785e7c659127, type: 3}
-  - {fileID: 8300000, guid: c5b1c0b58bafb1c4881d44b1ff004b57, type: 3}
   - {fileID: 8300000, guid: eaf345784be570b409353ad2c81e70ef, type: 3}
   - {fileID: 8300000, guid: bf4ec2931d198e645bedcf62ee2be7ab, type: 3}
   - {fileID: 8300000, guid: bdd7db487ededfe4d9f53ac214207f7c, type: 3}
