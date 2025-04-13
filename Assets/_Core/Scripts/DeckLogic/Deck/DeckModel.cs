@@ -26,6 +26,7 @@ namespace _Core.Scripts.DeckLogic.Deck
         public void Init(List<EmployeeData> employees)
         {
             Employees.AddRange(employees);
+            Shuffle();
         }
 
         public void AddCard(EmployeeData employee)
@@ -74,7 +75,7 @@ namespace _Core.Scripts.DeckLogic.Deck
             return lastItem;
         }
 
-        public void Shuffle()
+        private void Shuffle()
         {
             int n = Employees.Count;
             while (n > 1)
