@@ -22,11 +22,11 @@ MonoBehaviour:
     level: 2
     cardsPerTurn: 1
   - id: 3
-    experience: 40
+    experience: 50
     level: 3
     cardsPerTurn: 1
   - id: 4
-    experience: 50
+    experience: 60
     level: 4
     cardsPerTurn: 1
   - id: 5
