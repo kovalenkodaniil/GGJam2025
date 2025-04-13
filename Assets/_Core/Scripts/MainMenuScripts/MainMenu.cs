@@ -17,6 +17,11 @@ namespace _Core.Scripts.MainMenuScripts
             gameObject.SetActive(false);
         }
 
+        public void Open()
+        {
+            gameObject.SetActive(true);
+        }
+
         public void ExitGame()
         {
             Application.Quit();
