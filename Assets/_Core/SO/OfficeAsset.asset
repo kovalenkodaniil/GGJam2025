@@ -16,15 +16,20 @@ MonoBehaviour:
   - id: 1
     experience: 5
     level: 1
+    cardsPerTurn: 2
   - id: 2
     experience: 150
     level: 2
+    cardsPerTurn: 0
   - id: 3
     experience: 200
     level: 3
+    cardsPerTurn: 0
   - id: 4
     experience: 250
     level: 4
+    cardsPerTurn: 0
   - id: 5
     experience: 300
     level: 5
+    cardsPerTurn: 0

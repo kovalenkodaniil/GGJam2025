@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 20
   name: "PhP-\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A"
-  icon: {fileID: 21300000, guid: 17a93e21406559949994788c7ddefd50, type: 3}
+  icon: {fileID: 21300000, guid: 71f5085cab6c66847873a60a346bfb69, type: 3}
+  gender: 0
   characterictics:
   - type: 0
     value: 2
