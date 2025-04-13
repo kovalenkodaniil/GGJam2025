@@ -11,12 +11,16 @@ namespace _Core.Scripts.OfficeScripts.View
         [SerializeField] private Button m_taskButton;
         [SerializeField] private Button m_endTurnButton;
         [SerializeField] private HelpView m_helpView;
+        [SerializeField] private SettingView m_settings;
         [SerializeField] private List<TaskButton> m_taskButtons;
         [SerializeField] private List<OfficeCounterView> m_officeCounters;
+        [SerializeField] private ExpCounterView m_expCounter;
 
         public List<TaskButton> TaskButtons => m_taskButtons;
 
         public List<OfficeCounterView> OfficeCounters => m_officeCounters;
+
+        public ExpCounterView ExpCounter => m_expCounter;
 
         public event Action TackClicked;
 
@@ -42,6 +46,11 @@ namespace _Core.Scripts.OfficeScripts.View
         public void OpenHelp()
         {
             m_helpView.Open();
+        }
+
+        public void OpenSetting()
+        {
+            m_settings.Open();
         }
 
         private void OpenTask()

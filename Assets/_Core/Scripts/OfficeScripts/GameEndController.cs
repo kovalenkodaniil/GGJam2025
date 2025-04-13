@@ -65,8 +65,14 @@ namespace _Core.Scripts.OfficeScripts
             {
                 EndingConfig config = endingConfigs.Find(config => config.gameStat == gameStat.Value.type);
 
-                m_endGameView.FillEnding(config.gameStat,
-                    config.conditionValue >= gameStat.Value.value ? config.moreVariant : config.lessVariant);
+                if (gameStat.Value.value >= config.conditionValue)
+                {
+                    m_endGameView.FillEnding(gameStat.Value.type, config.moreVariant);
+                }
+                else
+                {
+                    m_endGameView.FillEnding(gameStat.Value.type, config.lessVariant);
+                }
             });
         }
     }

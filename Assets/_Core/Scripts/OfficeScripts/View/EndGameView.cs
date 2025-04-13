@@ -1,13 +1,18 @@
 ﻿using System.Collections.Generic;
+using _Core.Scripts.MainMenuScripts;
 using _Core.Scripts.Tasks;
 using _Core.StaticProvider;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using VContainer;
 
 namespace _Core.Scripts.OfficeScripts.View
 {
     public class EndGameView : MonoBehaviour
     {
+        [Inject] private MainMenu m_menu;
+
         [SerializeField] private GameObject m_conatainer;
         [SerializeField] private GameObject m_nextButtom;
         [SerializeField] private GameObject m_prevButtom;
@@ -82,6 +87,14 @@ namespace _Core.Scripts.OfficeScripts.View
         public void FillEnding(EnumReward statType, string ending)
         {
             m_slides.Find(slide => slide.Type == statType).SetEnding(ending);
+        }
+
+        public void BackToMenu()
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainMenu"));
+            SceneManager.UnloadSceneAsync("Office");
+
+            m_menu.Open();
         }
 
         private void PlayClick()

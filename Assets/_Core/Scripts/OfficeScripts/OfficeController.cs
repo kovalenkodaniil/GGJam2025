@@ -39,6 +39,8 @@ namespace _Core.Scripts.OfficeScripts
         private void InitCounters()
         {
             m_officeView.OfficeCounters.ForEach(counter => counter.Init(m_officeModel));
+
+            m_officeView.ExpCounter.Init(m_officeModel);
         }
 
         private void SubscribeTurnManager()

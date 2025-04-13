@@ -1282,6 +1282,7 @@ MonoBehaviour:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
+  m_menu: {fileID: 1662497023}
 --- !u!4 &2032818198
 Transform:
   m_ObjectHideFlags: 0

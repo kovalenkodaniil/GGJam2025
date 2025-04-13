@@ -22,6 +22,7 @@ namespace _Core.Scripts.Pipeline
         [SerializeField] private DeckView m_deckView;
         [SerializeField] private TrashView m_trashView;
         [SerializeField] private EndGameView m_gameView;
+        [SerializeField] private SettingView m_settingView;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -42,6 +43,7 @@ namespace _Core.Scripts.Pipeline
             builder.RegisterComponent(m_deckView);
             builder.RegisterComponent(m_trashView);
             builder.RegisterComponent(m_gameView);
+            builder.RegisterComponent(m_settingView);
 
             builder.RegisterEntryPoint<OfficeInstaller>();
         }
