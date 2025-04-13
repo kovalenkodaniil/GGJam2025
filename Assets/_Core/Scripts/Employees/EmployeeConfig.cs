@@ -10,7 +10,14 @@ namespace _Core.Scripts.Employees
         public string id;
         public string name;
         public Sprite icon;
+        public EnumGender gender;
         public List<CharacterAttribute> characterictics;
+    }
+
+    public enum EnumGender
+    {
+        Man,
+        Female
     }
 
     public enum EnumСharacteristic
