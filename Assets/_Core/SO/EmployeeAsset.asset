@@ -13,14 +13,36 @@ MonoBehaviour:
   m_Name: EmployeeAsset
   m_EditorClassIdentifier: 
   characters:
-  - {fileID: 11400000, guid: 98cb5e641591d4141a1b65785d6657a2, type: 2}
-  - {fileID: 11400000, guid: c5c8a841e9afd5c48871a62809e350f0, type: 2}
-  - {fileID: 11400000, guid: f06a04cb0eaf9174abba9308a5c2349e, type: 2}
-  - {fileID: 11400000, guid: 40ede64ccaa9f5245a306e4b4e37aad4, type: 2}
-  - {fileID: 11400000, guid: 0e08b473789e44e4fa68ed177038d4a4, type: 2}
-  - {fileID: 11400000, guid: dd1d7e3e1a89efc49968d54b3fef2d35, type: 2}
-  - {fileID: 11400000, guid: de481efbcfb28a64084d3d1b42654973, type: 2}
+  - {fileID: 11400000, guid: bf6283b944c9e704082b3d0dcff93bde, type: 2}
   - {fileID: 11400000, guid: 322dcf7cf0e72e34f80813bc66f05ee5, type: 2}
+  - {fileID: 11400000, guid: 40ede64ccaa9f5245a306e4b4e37aad4, type: 2}
+  - {fileID: 11400000, guid: 4b48b8a789ed7c046a335634f6cf78bb, type: 2}
+  - {fileID: 11400000, guid: f21a856919634c64eb4b6ef8781b4a7f, type: 2}
+  - {fileID: 11400000, guid: f27178e88eb98494d975cff959bfb82d, type: 2}
+  - {fileID: 11400000, guid: 6609a9546b0cc9347b4225682e4df462, type: 2}
+  - {fileID: 11400000, guid: d56f31d9abeba374f8519f07f1e5f080, type: 2}
+  - {fileID: 11400000, guid: 21dd89613817bf14a8fd4b6a64b394e0, type: 2}
+  - {fileID: 11400000, guid: 856c0bd46c80da24087f63cfbd491085, type: 2}
+  - {fileID: 11400000, guid: 7b0dac8d620978a42a2d4f946a5e44e0, type: 2}
+  - {fileID: 11400000, guid: c1aef2ead9e16d94f8d8768e5f0e1e99, type: 2}
+  - {fileID: 11400000, guid: 6220db369217cbf43a7fa3dbb81ca0fd, type: 2}
+  - {fileID: 11400000, guid: 4ede383fe024b114bbfb4886394ee7c7, type: 2}
+  - {fileID: 11400000, guid: b52b242404ee04c4b9491f9211cf2391, type: 2}
+  - {fileID: 11400000, guid: 30eaa5c7e442b4b48987ccd8a8988db6, type: 2}
+  - {fileID: 11400000, guid: 98cb5e641591d4141a1b65785d6657a2, type: 2}
+  - {fileID: 11400000, guid: 0e08b473789e44e4fa68ed177038d4a4, type: 2}
+  - {fileID: 11400000, guid: f06a04cb0eaf9174abba9308a5c2349e, type: 2}
+  - {fileID: 11400000, guid: c5c8a841e9afd5c48871a62809e350f0, type: 2}
+  - {fileID: 11400000, guid: de481efbcfb28a64084d3d1b42654973, type: 2}
+  - {fileID: 11400000, guid: dd1d7e3e1a89efc49968d54b3fef2d35, type: 2}
+  - {fileID: 11400000, guid: f34fecca17f949c498ecf1dd931c574b, type: 2}
+  - {fileID: 11400000, guid: 4baf71fa48946ec458b02c5ed1b07624, type: 2}
+  - {fileID: 11400000, guid: 72963b19e59df1e4595cbce3405cf70e, type: 2}
+  - {fileID: 11400000, guid: f1344a1b60b0f5c4bb90979c48ad4410, type: 2}
+  - {fileID: 11400000, guid: d458e8ee1c9c76c49b6909d07a3111f2, type: 2}
+  - {fileID: 11400000, guid: 50b95806980b9fb42803071a15d74034, type: 2}
+  - {fileID: 11400000, guid: 7d227c61a79ddb540be30bca1a2bc35d, type: 2}
+  - {fileID: 11400000, guid: a5b172cbee9d1eb438011d7fe5160897, type: 2}
   technologyIcon: {fileID: 0}
   creativityIcon: {fileID: 0}
-  stressIcon: {fileID: 0}
+  softSkillIcon: {fileID: 0}

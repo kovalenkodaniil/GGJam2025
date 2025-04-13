@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55c130b8925465ea7bd074329df387f, type: 3}
+  m_Name: Task9
+  m_EditorClassIdentifier: 
+  id: 38
+  name: "\u0420\u0435\u043A\u043B\u0430\u043C\u0430 \u0432 \u0438\u0433\u0440\u043E\u0436\u0443\u0440\u0435"
+  text: "\u0420\u0430\u0437\u043C\u0435\u0441\u0442\u0438\u0442\u044C \u0441\u0442\u0430\u0442\u044C\u044E
+    \u0432 \u0438\u0433\u0440\u043E\u0432\u043E\u043C \u0436\u0443\u0440\u043D\u0430\u043B\u0435"
+  difficultyConfig: {fileID: 11400000, guid: 09696e6a496ccee48aa858f47d786bf4, type: 2}
+  comment: "\u0420\u0430\u0437\u043C\u0435\u0441\u0442\u0438\u0442\u044C \u0441\u0442\u0430\u0442\u044C\u044E
+    \u0432 \u0438\u0433\u0440\u043E\u0432\u043E\u043C \u0436\u0443\u0440\u043D\u0430\u043B\u0435.
+    \u0421\u0435\u043D\u0441\u0430\u0446\u0438\u044F! \u0412\u043E \u0432\u0441\u0435\u0445
+    \u043A\u0438\u043E\u0441\u043A\u0430\u0445 \u0441\u0442\u0440\u0430\u043D\u044B!
+    \u0415\u0441\u043B\u0438, \u043A\u043E\u043D\u0435\u0447\u043D\u043E, \u043A\u0438\u043E\u0441\u043A\u0438
+    \u0435\u0449\u0451 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044E\u0442."
+  turnNumber: 1
+  conditions:
+  - type: 1
+    value: 1
+  - type: 2
+    value: 1
+  rewards:
+  - type: 1
+    value: 10
