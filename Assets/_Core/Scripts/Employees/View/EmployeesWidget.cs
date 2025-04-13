@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Core.Scripts.Tasks.View;
+using _Core.StaticProvider;
 using DG.Tweening;
 using R3;
 using TMPro;
@@ -100,7 +101,11 @@ namespace _Core.Scripts.Employees.View
         public void OnBeginDrag(PointerEventData eventData)
         {
             if (IsDragable)
+            {
+                SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.cardStartDraging);
+
                 OnDragHasBegun.OnNext(Unit.Default);
+            }
         }
 
         public void OnDrag(PointerEventData eventData)
