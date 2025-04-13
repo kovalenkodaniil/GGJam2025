@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Core.StaticProvider;
 using UnityEngine;
 
 namespace _Core.Scripts.OfficeScripts.View
@@ -19,6 +20,7 @@ namespace _Core.Scripts.OfficeScripts.View
 
         public void Close()
         {
+            PlayClick();
             m_conatainer.SetActive(false);
         }
 
@@ -38,6 +40,7 @@ namespace _Core.Scripts.OfficeScripts.View
                 m_currentIndex = m_slides.Count - 1;
             }
 
+            PlayClick();
             ShowSlide(m_currentIndex);
         }
 
@@ -50,7 +53,13 @@ namespace _Core.Scripts.OfficeScripts.View
                 m_currentIndex = 0;
             }
 
+            PlayClick();
             ShowSlide(m_currentIndex);
+        }
+
+        private void PlayClick()
+        {
+            SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.buttonClick);
         }
     }
 }

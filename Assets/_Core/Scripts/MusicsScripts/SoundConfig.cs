@@ -10,6 +10,8 @@ namespace _Core.Scripts
         public AudioClip buttonClick;
         public AudioClip stampClick;
         public AudioClip taskCreated;
+        public AudioClip cardInTask;
+        public AudioClip cardStartDraging;
 
         public List<AudioClip> mansClips;
         public List<AudioClip> womenClips;

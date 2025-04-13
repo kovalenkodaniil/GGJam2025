@@ -108,7 +108,7 @@ namespace _Core.Scripts.Employees
         {
             if (!isInTask)
             {
-                //SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.GetRandomManClip());
+                PlayTaskSound();
 
                 m_employeesTaskPanel.AddEmployee(m_data, m_view);
 
@@ -146,6 +146,16 @@ namespace _Core.Scripts.Employees
             m_view.Name = m_config.name;
 
             m_view.SetConditionCounters(m_config.characterictics);
+        }
+
+        private void PlayTaskSound()
+        {
+            //SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.cardInTask);
+
+            if (m_data.Config.gender == EnumGender.Man)
+                SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.GetRandomManClip());
+            else
+                SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.GetRandomWomenClip());
         }
     }
 }
