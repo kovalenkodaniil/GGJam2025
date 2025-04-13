@@ -24,9 +24,9 @@ MonoBehaviour:
   turnNumber: 4
   conditions:
   - type: 0
-    value: 2
-  - type: 2
-    value: 2
+    value: 3
+  - type: 1
+    value: 1
   rewards:
   - type: 4
     value: 20
