@@ -27,8 +27,6 @@ MonoBehaviour:
     \u0421\u041C\u0421!"
   turnNumber: 3
   conditions:
-  - type: 0
-    value: 0
   - type: 1
     value: 1
   - type: 2
