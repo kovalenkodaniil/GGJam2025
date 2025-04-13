@@ -24,7 +24,7 @@ MonoBehaviour:
   turnNumber: 7
   conditions:
   - type: 1
-    value: 2
+    value: 3
   - type: 2
     value: 2
   rewards:
