@@ -1,4 +1,4 @@
-﻿using System;
+﻿using _Core.StaticProvider;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +12,8 @@ namespace _Core.Scripts.OfficeScripts.View
 
         public void Open()
         {
+            PlayClick();
+
             m_conteiner.SetActive(true);
 
             SetupSlider();
@@ -19,6 +21,8 @@ namespace _Core.Scripts.OfficeScripts.View
 
         public void Close()
         {
+            PlayClick();
+
             m_conteiner.SetActive(false);
         }
 
@@ -53,6 +57,11 @@ namespace _Core.Scripts.OfficeScripts.View
         {
             m_musicSlider.onValueChanged.RemoveListener(ChangeMusic);
             m_soundSlider.onValueChanged.RemoveListener(ChangeSound);
+        }
+
+        private void PlayClick()
+        {
+            SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.buttonClick);
         }
     }
 }
