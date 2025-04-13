@@ -8,6 +8,8 @@ namespace _Core.Scripts.OfficeScripts.View
     {
         [SerializeField] private GameObject m_conatainer;
         [SerializeField] private List<GameObject> m_slides;
+        [SerializeField] private GameObject m_nextButtom;
+        [SerializeField] private GameObject m_prevButtom;
 
         private int m_currentIndex;
 
@@ -15,6 +17,8 @@ namespace _Core.Scripts.OfficeScripts.View
         {
             m_conatainer.SetActive(true);
 
+            m_currentIndex = 0;
+            EnablingButton();
             ShowSlide(0);
         }
 
@@ -42,6 +46,7 @@ namespace _Core.Scripts.OfficeScripts.View
 
             PlayClick();
             ShowSlide(m_currentIndex);
+            EnablingButton();
         }
 
         public void PrevPage()
@@ -55,11 +60,18 @@ namespace _Core.Scripts.OfficeScripts.View
 
             PlayClick();
             ShowSlide(m_currentIndex);
+            EnablingButton();
         }
 
         private void PlayClick()
         {
             SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.buttonClick);
+        }
+
+        private void EnablingButton()
+        {
+            m_nextButtom.SetActive(m_currentIndex != m_slides.Count - 1);
+            m_prevButtom.SetActive(m_currentIndex != 0);
         }
     }
 }
