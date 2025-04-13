@@ -150,7 +150,7 @@ namespace _Core.Scripts.Employees
 
         private void PlayTaskSound()
         {
-            //SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.cardInTask);
+            SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.cardInTask);
 
             if (m_data.Config.gender == EnumGender.Man)
                 SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.GetRandomManClip());
