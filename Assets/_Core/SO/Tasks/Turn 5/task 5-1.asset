@@ -26,12 +26,10 @@ MonoBehaviour:
     \u041A\u0430\u0431\u0438..."
   turnNumber: 5
   conditions:
-  - type: 0
-    value: 1
   - type: 1
     value: 1
   - type: 2
-    value: 2
+    value: 3
   rewards:
   - type: 1
     value: 20

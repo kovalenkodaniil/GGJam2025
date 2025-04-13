@@ -28,7 +28,7 @@ MonoBehaviour:
   - type: 0
     value: 3
   - type: 2
-    value: 1
+    value: 2
   rewards:
   - type: 2
     value: 30
