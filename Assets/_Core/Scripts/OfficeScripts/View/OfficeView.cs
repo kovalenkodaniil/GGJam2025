@@ -10,6 +10,7 @@ namespace _Core.Scripts.OfficeScripts.View
     {
         [SerializeField] private Button m_taskButton;
         [SerializeField] private Button m_endTurnButton;
+        [SerializeField] private HelpView m_helpView;
         [SerializeField] private List<TaskButton> m_taskButtons;
         [SerializeField] private List<OfficeCounterView> m_officeCounters;
 
@@ -36,6 +37,11 @@ namespace _Core.Scripts.OfficeScripts.View
         public void SetEnableTurnButton(bool isEnabling)
         {
             m_endTurnButton.interactable = isEnabling;
+        }
+
+        public void OpenHelp()
+        {
+            m_helpView.Open();
         }
 
         private void OpenTask()
