@@ -106,24 +106,37 @@ namespace _Core.Scripts.Employees
 
         private void AddOnTaskPanel()
         {
-            SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.GetRandomManClip());
+            if (!isInTask)
+            {
+                //SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.GetRandomManClip());
 
-            m_employeesTaskPanel.AddEmployee(m_data, m_view);
+                m_employeesTaskPanel.AddEmployee(m_data, m_view);
+
+                m_employeesTaskPanel.EmpoyeesTrashed += Disable;
+                m_employeesTaskPanel.EmpoyeesReturn += ReturnOnPanel;
+            }
+            else
+            {
+                m_employeesTaskPanel.ReplaceEmployee(m_data, m_view);
+            }
+
             isInTask = true;
-
-            m_employeesTaskPanel.EmpoyeesTrashed += Disable;
-            m_employeesTaskPanel.EmpoyeesReturn += ReturnOnPanel;
         }
 
         private void ReturnOnPanel()
         {
+            if (isInTask)
+            {
+                m_employeesTaskPanel.RemoveEmployee(m_data);
+
+                m_employeesTaskPanel.EmpoyeesReturn -= ReturnOnPanel;
+                m_employeesTaskPanel.EmpoyeesTrashed -= Disable;
+            }
+
             isInTask = false;
-            m_employeesTaskPanel.RemoveEmployee(m_data);
+
             m_view.transform.SetParent(m_defaultParent);
             m_view.transform.localPosition = Vector3.zero;
-
-            m_employeesTaskPanel.EmpoyeesReturn -= ReturnOnPanel;
-            m_employeesTaskPanel.EmpoyeesTrashed -= Disable;
         }
 
         private void UpdateView()

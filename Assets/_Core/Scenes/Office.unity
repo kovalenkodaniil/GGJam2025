@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1307263936}
     m_Modifications:
+    - target: {fileID: 135076758446593935, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2250847961955284072, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
       propertyPath: m_Name
       value: QualityCounter
@@ -401,6 +405,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1307263936}
     m_Modifications:
+    - target: {fileID: 135076758446593935, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2250847961955284072, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
       propertyPath: m_Name
       value: GameplayCounter
@@ -693,7 +701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8089686767797765617, guid: 28e2710298dcb8a469ce374ebb6be131, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 272.05
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 8089686767797765617, guid: 28e2710298dcb8a469ce374ebb6be131, type: 3}
       propertyPath: m_LocalPosition.x
@@ -772,6 +780,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1307263936}
     m_Modifications:
+    - target: {fileID: 135076758446593935, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2250847961955284072, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
       propertyPath: m_Name
       value: PopularityCounter
@@ -1880,6 +1892,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1307263936}
     m_Modifications:
+    - target: {fileID: 135076758446593935, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2250847961955284072, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
       propertyPath: m_Name
       value: ProfitCounter
@@ -2526,6 +2542,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1307263936}
     m_Modifications:
+    - target: {fileID: 135076758446593935, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2250847961955284072, guid: 920a4f0e64932674f8f6ea41adfd48de, type: 3}
       propertyPath: m_Name
       value: graphCounter

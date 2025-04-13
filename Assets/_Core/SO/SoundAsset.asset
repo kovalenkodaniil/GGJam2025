@@ -24,4 +24,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 77d05495e5d6e2c44ab65333ddde7af4, type: 3}
   - {fileID: 8300000, guid: 5b214822d1a42bd4187cdb758fe366e8, type: 3}
   - {fileID: 8300000, guid: 0e22a83ee4748ba49a14b3a0c7581ce9, type: 3}
-  womenClips: []
+  womenClips:
+  - {fileID: 8300000, guid: b515db555e0f0474c93d2aed0967c1f1, type: 3}
+  - {fileID: 8300000, guid: 89bb8c45f479823489514429d63ae11a, type: 3}
+  - {fileID: 8300000, guid: b89ef143394efcf4d807cbffc2cbcaba, type: 3}
+  - {fileID: 8300000, guid: e9194d1722061e24a98c4528b13d72cc, type: 3}
+  - {fileID: 8300000, guid: 23718a9774227324ba49e6de3f953a55, type: 3}
+  - {fileID: 8300000, guid: 23f74db2bc53212459248536fb69c9fd, type: 3}
+  - {fileID: 8300000, guid: 0d3e76259be72f049a4b226119e98045, type: 3}
+  - {fileID: 8300000, guid: f1195aeb730ce1a42a636ad34fa8ca0d, type: 3}
