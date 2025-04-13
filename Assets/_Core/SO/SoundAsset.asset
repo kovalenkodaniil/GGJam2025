@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SoundAsset
   m_EditorClassIdentifier: 
   mainTheme: {fileID: 8300000, guid: 377f651a0ce498a45b33c493c29fc456, type: 3}
-  buttonClick: {fileID: 8300000, guid: ddababd93dd839a4ebdbac87b046139a, type: 3}
+  buttonClick: {fileID: 8300000, guid: c5c242ebe67b50a40b364632318a2a64, type: 3}
   stampClick: {fileID: 8300000, guid: b09f56b6fcb0fad43b76345af2f1ace1, type: 3}
   taskCreated: {fileID: 8300000, guid: 7197db9949e9ce548b8bd57939cbcc01, type: 3}
-  cardInTask: {fileID: 8300000, guid: 0dff97d30c60bd246a8a69f2ca547a59, type: 3}
+  cardInTask: {fileID: 8300000, guid: 6f7f8582cace35d4085e74e56a0ad0dd, type: 3}
   cardStartDraging: {fileID: 8300000, guid: 93f19fdd347f61249bfd9c02a1dd50c6, type: 3}
   mansClips:
   - {fileID: 8300000, guid: 0bb03638f5201784294c86801e166904, type: 3}

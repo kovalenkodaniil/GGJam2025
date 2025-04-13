@@ -124,7 +124,7 @@ namespace _Core.Scripts.OfficeScripts
 
             m_taskView.Close();
             m_officeModel.TakeReward(m_taskModel.GetReward(), m_taskModel.Task.Config.difficultyConfig.experience);
-            m_taskModel.Task.IsCompleted = new ReactiveProperty<bool>(true);
+            m_taskModel.Task.IsCompleted.Value = true;
 
             CheckCompletedTasks();
         }
@@ -139,7 +139,7 @@ namespace _Core.Scripts.OfficeScripts
                 }
             }
 
-            IsAllTaskComplete = new ReactiveProperty<bool>(true);
+            IsAllTaskComplete.Value = true;
         }
 
         private void CreateTasks()
