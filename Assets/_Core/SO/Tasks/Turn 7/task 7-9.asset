@@ -24,11 +24,11 @@ MonoBehaviour:
   turnNumber: 7
   conditions:
   - type: 0
-    value: 2
+    value: 1
   - type: 1
     value: 2
   - type: 2
-    value: 2
+    value: 1
   rewards:
   - type: 4
     value: 30
