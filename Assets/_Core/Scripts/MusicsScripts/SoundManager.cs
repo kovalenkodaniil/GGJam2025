@@ -120,7 +120,7 @@ namespace _Core.Scripts
     {
         musicVolume = Mathf.Clamp01(volume);
 
-        _musicSource.volume = sfxVolume * masterVolume;
+        _musicSource.volume = musicVolume * masterVolume;
     }
 
     private void UpdateAllSfxVolumes()
