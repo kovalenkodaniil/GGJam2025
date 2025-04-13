@@ -19,7 +19,7 @@ namespace _Core.Scripts.OfficeScripts.View
             m_disposable = new CompositeDisposable();
             m_officeModel = officeModel;
 
-            m_progressBar.maxValue = 60;
+            Reset();
 
             m_officeModel.Experience
                 .Subscribe(UpdateTimer)
@@ -46,7 +46,7 @@ namespace _Core.Scripts.OfficeScripts.View
 
         private void UpdateTimer(int count)
         {
-            m_count.text = $"{count}";
+            m_count.text = $"{count}/{m_progressBar.maxValue}";
 
             m_progressBar.value = count;
         }

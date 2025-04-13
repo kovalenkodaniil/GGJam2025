@@ -15,6 +15,7 @@ namespace _Core.Scripts.Tasks.View
         [SerializeField] private TMP_Text m_name;
         [SerializeField] private TMP_Text m_description;
         [SerializeField] private TMP_Text m_comment;
+        [SerializeField] private TMP_Text m_expCounter;
         [SerializeField] private CanvasGroup m_canvasGroup;
         [SerializeField] private TaskEmployeesPanel m_empoyeesPanel;
         [SerializeField] private Button m_completeButton;
@@ -42,6 +43,11 @@ namespace _Core.Scripts.Tasks.View
         public string Comment
         {
             set => m_comment.text = value;
+        }
+
+        public void SetExp(int value)
+        {
+            m_expCounter.text = $"+{value}";
         }
 
         public void Open()

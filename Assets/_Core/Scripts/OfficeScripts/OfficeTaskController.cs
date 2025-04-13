@@ -85,6 +85,7 @@ namespace _Core.Scripts.OfficeScripts
             m_taskView.Name = selectedTask.Config.name;
             m_taskView.Description = selectedTask.Config.text;
             m_taskView.Comment = selectedTask.Config.comment;
+            m_taskView.SetExp(selectedTask.Config.difficultyConfig.experience);
             m_taskView.SetConditionCounters(selectedTask.Config.conditions);
             m_taskView.SetRewardCounters(selectedTask.Config.rewards);
 

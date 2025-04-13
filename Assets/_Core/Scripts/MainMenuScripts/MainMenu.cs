@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _Core.StaticProvider;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace _Core.Scripts.MainMenuScripts
@@ -12,6 +13,7 @@ namespace _Core.Scripts.MainMenuScripts
 
         public void LoadGameScene()
         {
+            SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.buttonClick);
             SceneManager.LoadSceneAsync("Office", LoadSceneMode.Additive);
 
             gameObject.SetActive(false);

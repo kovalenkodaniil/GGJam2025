@@ -13,7 +13,7 @@ namespace _Core.Scripts.TurnManagerScripts
         public Subject<Unit> OnPlayerActionStarted;
         public Subject<Unit> OnTurnEnded;
 
-        public int TurnNumber;
+        public ReactiveProperty<int> TurnNumber = new(0);
         public TurnConfig CurrentTurn;
         private List<TurnConfig> m_turnConfigs;
 
@@ -33,7 +33,7 @@ namespace _Core.Scripts.TurnManagerScripts
             m_turnConfigs = new List<TurnConfig>();
             m_turnConfigs.AddRange(StaticDataProvider.Get<TurnDataProvider>().asset.turns);
 
-            TurnNumber = 0;
+            TurnNumber = new(0);
         }
 
         public void Dispose()
@@ -82,8 +82,8 @@ namespace _Core.Scripts.TurnManagerScripts
 
         private bool TryChangeTurn()
         {
-            TurnNumber++;
-            CurrentTurn = m_turnConfigs.FirstOrDefault(a => a.turnNumber == TurnNumber);
+            TurnNumber.Value++;
+            CurrentTurn = m_turnConfigs.FirstOrDefault(a => a.turnNumber == TurnNumber.Value);
 
             if (CurrentTurn == null)
             {
