@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using _Core.Scripts.DeckLogic.Trash;
 using _Core.Scripts.Employees;
+using _Core.Scripts.OfficeScripts;
+using _Core.StaticProvider;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -12,7 +15,8 @@ namespace _Core.Scripts.DeckLogic.Hand
         private TrashModel m_trashModel;
         public int CardsPerTurn;
         public List<EmployeeData> Employees;
-
+        
+        private List<OfficeConfig> _officeConfigs;
         public event Action<EmployeeData> EmployeesAdded;
         public event Action<EmployeeData> EmployeesRemoved;
 
@@ -20,8 +24,15 @@ namespace _Core.Scripts.DeckLogic.Hand
         {
             Employees = new List<EmployeeData>();
 
+            _officeConfigs = new List<OfficeConfig>();
+            _officeConfigs.AddRange(StaticDataProvider.Get<OfficeDataProvider>().asset.configs);
+            
             m_trashModel = trashModel;
-            CardsPerTurn = 3;
+            CardsPerTurn = _officeConfigs.FirstOrDefault(officeConfig => officeConfig.level == 1)?.cardsPerTurn ?? 3;
+            if (CardsPerTurn == 0)
+            {
+                CardsPerTurn = 3;
+            }
         }
 
         public void DiscardHand()
