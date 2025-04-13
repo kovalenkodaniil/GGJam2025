@@ -35,3 +35,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 23f74db2bc53212459248536fb69c9fd, type: 3}
   - {fileID: 8300000, guid: 0d3e76259be72f049a4b226119e98045, type: 3}
   - {fileID: 8300000, guid: f1195aeb730ce1a42a636ad34fa8ca0d, type: 3}
+  legendaryClips:
+  - {fileID: 8300000, guid: 00b12d3ab6d22c44b830a1e0b3fbc043, type: 3}
+  - {fileID: 8300000, guid: e7dc3c2083b83ae468f257b0226743db, type: 3}
+  - {fileID: 8300000, guid: cd0cc439a18ceb94cb4ac05493be6f9e, type: 3}
+  - {fileID: 8300000, guid: 8227340260075c045b74ec6edc7b2c4b, type: 3}
+  - {fileID: 8300000, guid: 88e795bc4975a4e468d0785e7c659127, type: 3}
+  - {fileID: 8300000, guid: c5b1c0b58bafb1c4881d44b1ff004b57, type: 3}
+  - {fileID: 8300000, guid: eaf345784be570b409353ad2c81e70ef, type: 3}
+  - {fileID: 8300000, guid: bf4ec2931d198e645bedcf62ee2be7ab, type: 3}
+  - {fileID: 8300000, guid: bdd7db487ededfe4d9f53ac214207f7c, type: 3}
+  - {fileID: 8300000, guid: f070a06cf3138c34b938ed26d877b4da, type: 3}
+  - {fileID: 8300000, guid: da091b144ee5d4b4d8975d643ea7f48c, type: 3}
+  - {fileID: 8300000, guid: cd9c1c8b881e26446b61a63fdfb45f9b, type: 3}

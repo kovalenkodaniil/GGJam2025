@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using _Core.Scripts.Employees;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Core.Scripts
 {
@@ -15,6 +18,18 @@ namespace _Core.Scripts
 
         public List<AudioClip> mansClips;
         public List<AudioClip> womenClips;
+        public List<AudioClip> legendaryClips;
+
+        public AudioClip GetClipByGender(EnumGender gender)
+        {
+            return gender switch
+            {
+                EnumGender.Man => GetRandomManClip(),
+                EnumGender.Female => GetRandomWomenClip(),
+                EnumGender.Ilya => GetRandomLegendaryClip(),
+                _ => throw new ArgumentOutOfRangeException(nameof(gender), gender, null)
+            };
+        }
 
         public AudioClip GetRandomManClip()
         {
@@ -24,6 +39,11 @@ namespace _Core.Scripts
         public AudioClip GetRandomWomenClip()
         {
             return womenClips[Random.Range(0, womenClips.Count)];
+        }
+
+        public AudioClip GetRandomLegendaryClip()
+        {
+            return legendaryClips[Random.Range(0, womenClips.Count)];
         }
     }
 }

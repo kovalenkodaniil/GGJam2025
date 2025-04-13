@@ -17,7 +17,8 @@ namespace _Core.Scripts.Employees
     public enum EnumGender
     {
         Man,
-        Female
+        Female,
+        Ilya
     }
 
     public enum EnumСharacteristic

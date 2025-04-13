@@ -152,10 +152,7 @@ namespace _Core.Scripts.Employees
         {
             SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.cardInTask);
 
-            if (m_data.Config.gender == EnumGender.Man)
-                SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.GetRandomManClip());
-            else
-                SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.GetRandomWomenClip());
+            SoundManager.Instance.PlaySfx(StaticDataProvider.Get<SoundDataProvider>().asset.GetClipByGender(m_data.Config.gender));
         }
     }
 }
