@@ -9,7 +9,6 @@ using _Core.Scripts.OfficeScripts.View;
 using _Core.Scripts.Tasks.View;
 using _Core.Scripts.TurnManagerScripts;
 using _Core.StaticProvider;
-using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
@@ -48,6 +47,8 @@ namespace _Core.Scripts.OfficeScripts
             m_trashView.Init();
 
             SoundManager.Instance.PlayMusic(StaticDataProvider.Get<SoundDataProvider>().asset.mainTheme);
+
+            m_officeView.OpenHelp();
         }
 
         private void CreateDeck()
