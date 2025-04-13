@@ -8,5 +8,6 @@ namespace _Core.Scripts.OfficeScripts
         public string id;
         public int experience;
         public int level;
+        public int cardsPerTurn;
     }
 }
