@@ -14,22 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   configs:
   - id: 1
-    experience: 0
+    experience: 10
     level: 1
     cardsPerTurn: 2
   - id: 2
-    experience: 10
+    experience: 30
     level: 2
     cardsPerTurn: 1
   - id: 3
-    experience: 30
+    experience: 50
     level: 3
     cardsPerTurn: 1
   - id: 4
-    experience: 50
+    experience: 70
     level: 4
     cardsPerTurn: 1
   - id: 5
-    experience: 90
+    experience: 9000
     level: 5
     cardsPerTurn: 1
