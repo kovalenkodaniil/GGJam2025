@@ -20,7 +20,7 @@ namespace _Core.Scripts.OfficeScripts.View
         {
             m_disposable = new CompositeDisposable();
 
-            m_progressBar.maxValue = 20;
+            m_progressBar.maxValue = 60;
 
             switch (Type)
             {

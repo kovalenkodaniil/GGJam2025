@@ -926,6 +926,7 @@ MonoBehaviour:
   m_canvasGroup: {fileID: 4523446394071069031}
   m_empoyeesPanel: {fileID: 3325344952880498247}
   m_completeButton: {fileID: 6152281280776338575}
+  m_closeButton: {fileID: 1481542783310524373}
   m_conditionView:
   - {fileID: 6007927500193262309}
   - {fileID: 2880394136878098623}
@@ -1674,19 +1675,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5192282269919356280}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6520835988947546228}
-        m_TargetAssemblyTypeName: _Core.Scripts.Tasks.View.TaskView, Assembly-CSharp
-        m_MethodName: Close
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &6961338636924107082
 GameObject:
   m_ObjectHideFlags: 0

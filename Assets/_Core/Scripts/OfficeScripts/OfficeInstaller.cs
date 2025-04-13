@@ -46,6 +46,8 @@ namespace _Core.Scripts.OfficeScripts
 
             m_deckView.Init();
             m_trashView.Init();
+
+            SoundManager.Instance.PlayMusic(StaticDataProvider.Get<SoundDataProvider>().asset.mainTheme);
         }
 
         private void CreateDeck()
