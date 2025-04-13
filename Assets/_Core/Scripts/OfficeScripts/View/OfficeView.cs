@@ -13,10 +13,13 @@ namespace _Core.Scripts.OfficeScripts.View
         [SerializeField] private HelpView m_helpView;
         [SerializeField] private List<TaskButton> m_taskButtons;
         [SerializeField] private List<OfficeCounterView> m_officeCounters;
+        [SerializeField] private ExpCounterView m_expCounter;
 
         public List<TaskButton> TaskButtons => m_taskButtons;
 
         public List<OfficeCounterView> OfficeCounters => m_officeCounters;
+
+        public ExpCounterView ExpCounter => m_expCounter;
 
         public event Action TackClicked;
 

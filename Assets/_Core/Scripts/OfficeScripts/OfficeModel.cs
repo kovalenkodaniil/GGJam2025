@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using _Core.Scripts.DeckLogic.Hand;
 using _Core.Scripts.Tasks;
@@ -19,8 +20,10 @@ namespace _Core.Scripts.OfficeScripts
 
         private List<OfficeConfig> _officeConfigs;
         private HandModel _handModel;
-        private int _currentLevel = 1;
-        public int Experience;
+        public int _currentLevel = 1;
+        public ReactiveProperty<int> Experience = new ReactiveProperty<int>();
+
+        public event Action LevelUped;
 
         public OfficeModel(HandModel handModel)
         {
@@ -48,11 +51,11 @@ namespace _Core.Scripts.OfficeScripts
                     new RewardAttribute(attribute.type, currentAttribute.Value.value + attribute.value);
             }
 
-            Experience += experience;
+            Experience.Value += experience;
             CheckExperience();
         }
 
-        private OfficeConfig GetOfficeConfig(int level)
+        public OfficeConfig GetOfficeConfig(int level)
         {
             return _officeConfigs.FirstOrDefault(officeConfig => officeConfig.level == level);
         }
@@ -60,9 +63,9 @@ namespace _Core.Scripts.OfficeScripts
         private void CheckExperience()
         {
             OfficeConfig currentOfficeConfig = GetOfficeConfig(_currentLevel);
-            if (Experience >= currentOfficeConfig.experience)
+            if (Experience.Value >= currentOfficeConfig.experience)
             {
-                Experience -= currentOfficeConfig.experience;
+                Experience.Value -= currentOfficeConfig.experience;
                 UpdateLevel();
             }
         }
@@ -71,6 +74,8 @@ namespace _Core.Scripts.OfficeScripts
         {
             _handModel.CardsPerTurn++;
             _currentLevel++;
+
+            LevelUped?.Invoke();
         }
     }
 }

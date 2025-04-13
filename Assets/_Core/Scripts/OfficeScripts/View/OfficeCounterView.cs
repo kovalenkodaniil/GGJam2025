@@ -46,6 +46,11 @@ namespace _Core.Scripts.OfficeScripts.View
             }
         }
 
+        public void OnDisable()
+        {
+            m_disposable?.Dispose();
+        }
+
         private void UpdateCounter(RewardAttribute rewardAttribute)
         {
             m_count.text = $"{rewardAttribute.value}";
