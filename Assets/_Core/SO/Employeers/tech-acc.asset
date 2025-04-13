@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
-  m_Name: serv-sys
+  m_Name: tech-acc
   m_EditorClassIdentifier: 
-  id: 22
-  name: "\u0421\u0438\u0441\u0430\u0434\u043C\u0438\u043D"
-  icon: {fileID: 21300000, guid: 8f7676a8265d6f94e9e6ab90e32fb5fd, type: 3}
+  id: 29
+  name: "\u0411\u0443\u0445\u0433\u0430\u043B\u0442\u0435\u0440"
+  icon: {fileID: 21300000, guid: 87fa37310e4aa0647b587c0a41319c66, type: 3}
   characterictics:
-  - type: 0
-    value: 2
   - type: 2
+    value: 2
+  - type: 0
     value: 1

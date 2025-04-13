@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca023d0329fe40c6850babde02453715, type: 3}
-  m_Name: cm-pr
+  m_Name: client-team
   m_EditorClassIdentifier: 
-  id: 23
-  name: "\u041F\u0438\u0430\u0440\u0449\u0438\u043A"
-  icon: {fileID: 21300000, guid: 813d1642fba0cdd41b308ec213d44bef, type: 3}
+  id: 17
+  name: "\u0422\u0438\u043C\u043B\u0438\u0434"
+  icon: {fileID: 21300000, guid: 33c4790008ae9c546a80035d6bf17cce, type: 3}
   characterictics:
+  - type: 0
+    value: 2
   - type: 1
     value: 1
-  - type: 2
-    value: 2
